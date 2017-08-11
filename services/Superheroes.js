@@ -10,19 +10,19 @@
       {
         name: 'Superman',
         phonenumber: '555-555-5557',
-        photo_url: '',
+        photo_url: 'superman.jpg',
         affiliation: 'DC Comics'
       },
       {
         name: 'Batman',
         phonenumber: '555-555-5557',
-        photo_url: '',
+        photo_url: 'superman.jpg',
         affiliation: 'DC Comics'
       },
       {
         name: 'Iron Man',
         phonenumber: '555-555-5557',
-        photo_url: '',
+        photo_url: 'superman.jpg',
         affiliation: 'Marvel'
       }
     ]
