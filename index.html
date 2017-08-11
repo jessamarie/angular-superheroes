@@ -7,32 +7,29 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script src="app.js"></script>
   <script src="controllers/Superheroes.js"></script>
+  <script src="services/Superheroes.js"></script>
 </head>
 <body ng-app="superheroApp">
-
-  <!-- <div ng-controller="SuperheroFormController as vm">
-    <h2>Search for Superhero: </h2>
-    <label for="search-input">Search</label>
-    <input type="text" id="search-input" name="search" value="" ng-model="vm.searchText">
-    <button ng-click="vm.searchSuperhero()">Search</button>
-    <h2>Searching For: {{vm.searchText}}</h2>
-  </div> -->
 
   <div class="superheros" ng-controller="SuperherosController as vm">
 
     <!-- Search Box -->
+
     <h1>Superheros List</h1>
-    <h2>Search for Superhero: </h2>
-    <label for="search-input">Search</label>
-    <input type="text" id="search-input" name="search" value="" ng-model="vm.searchText">
-    <h2>Searching For: {{vm.searchText}}</h2>
+    <input type="text" id="search-input" placeholder="Search for Superhero" name="search" value="" ng-model="vm.searchText">
+    <span>Searching For: {{vm.searchText}}<span>
 
     <!-- searchText  -->
-    <ul>
-      <li ng-repeat="hero in vm.superheros | filter: vm.searchText"
+    <ul class="superhero">
+      <li ng-repeat="hero in vm.superheros | filter: { name: vm.searchText }"
           ng-class="hero.affiliation === 'Marvel'? 'marvel' : 'dccomics'">
-        <div class=""><h3>{{hero.name}}<button ng-click="">See Image</button></h3></div>
+        <h3>{{hero.name}}</h3>
         <p>{{hero.phonenumber}}</p>
+
+        <button ng-click="vm.selectHero(hero)">See Image</button>
+
+
+        <img ng-show="hero == vm.selectedHero" width="100px" height="200px" ng-src="./{{hero.photo_url}}" alt="hero.name">
       </li>
     </ul>
   </div>

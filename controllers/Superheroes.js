@@ -8,7 +8,11 @@
     .controller('SuperherosController', ['superheros', SuperherosController])
 
   function SuperherosController (superheros) {
-    const vm = this
-    vm.superheros = superheros.all()
+    this.superheros = superheros.all()
+
+    this.selectHero = function (hero) {
+      this.selectedHero = hero
+    }
+
   }
 })()
