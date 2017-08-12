@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Superhero Phone Book</title>
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script src="app.js"></script>
@@ -11,25 +12,34 @@
 </head>
 <body ng-app="superheroApp">
 
-  <div class="superheros" ng-controller="SuperherosController as vm">
+  <div class="container" ng-controller="SuperherosController as vm">
 
-    <!-- Search Box -->
+    <div class="header">
+      <h1>Superheros Phone Book</h1>
 
-    <h1>Superheros List</h1>
-    <input type="text" id="search-input" placeholder="Search for Superhero" name="search" value="" ng-model="vm.searchText">
-    <span>Searching For: {{vm.searchText}}<span>
+      <!-- Search Box -->
+      <input type="text" id="search-input" placeholder="Search for Superhero" name="search" value="" ng-model="vm.searchText">
+      <div>{{vm.searchText}}</div>
+    </div>
 
     <!-- searchText  -->
-    <ul class="superhero">
+    <ul class="column">
       <li ng-repeat="hero in vm.superheros | filter: { name: vm.searchText }"
-          ng-class="hero.affiliation === 'Marvel'? 'marvel' : 'dccomics'">
-        <h3>{{hero.name}}</h3>
-        <p>{{hero.phonenumber}}</p>
+          ng-class="vm.getComicAffiliation(hero)"
+          class="column">
 
-        <button ng-click="vm.selectHero(hero)">See Image</button>
-
-
-        <img ng-show="hero == vm.selectedHero" width="100px" height="200px" ng-src="./{{hero.photo_url}}" alt="hero.name">
+          <h4>{{hero.name}}</h4>
+          <p>{{hero.phonenumber}}</p>
+          <button ng-click="vm.selectHero(hero)"
+                  ng-class="vm.getComicAffiliation(hero)">
+          See Image
+          </button>
+          <div class="image-wrapper">
+            <img class="superhero-image"
+                 ng-show="hero == vm.selectedHero"
+                 ng-src="{{hero.photo_url}}"
+                 alt="photo of {{hero.name}}">
+          </div>
       </li>
     </ul>
   </div>
