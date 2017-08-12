@@ -11,9 +11,17 @@ body {
 }
 
 .container {
-  width: 50%;
+  width: 80%;
   height: 100%;
   margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 5px;
+}
+
+#search-input {
+  text-align: center;
 }
 
 h1 {
@@ -31,8 +39,9 @@ h1 {
 }
 
 ul {
-  align-items: space-between;
-  width: 35%;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
   margin: 0 auto;
 }
 
@@ -40,6 +49,11 @@ li {
   border: 1px solid black;
   list-style-type: none;
   margin: 1px;
+}
+
+.superhero {
+  width: 150px;
+  height: 100px;
 }
 
 .superhero-info {
@@ -69,8 +83,9 @@ button {
 .image-wrapper {
   align-self: center;
   justify-content: center;
-  width: 99%;
-  height: 100%;
+  width: 200px;
+  height: 250px;
+  margin: 5px auto 10px auto;
   overflow: hidden;
 }
 
