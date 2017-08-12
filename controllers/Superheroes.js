@@ -14,5 +14,8 @@
       this.selectedHero = hero
     }
 
-  }
+    this.getComicAffiliation = function (hero) {
+      return hero.affiliation === 'Marvel' ? 'marvel' : 'dccomics'
+    }
+  } // end controller
 })()
