@@ -45,7 +45,7 @@ ul {
   margin: 0 auto;
 }
 
-li {
+li, .newSuperhero {
   border: 1px solid black;
   list-style-type: none;
   margin: 1px;
@@ -54,6 +54,11 @@ li {
 .superhero {
   width: 150px;
   height: 100px;
+}
+
+.newSuperhero {
+  margin-top: 20px;
+  width: auto;
 }
 
 .superhero-info {
