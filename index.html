@@ -22,10 +22,17 @@
       <div>{{vm.searchText}}</div>
     </div>
 
+    <div class="image-wrapper" ng-show="vm.selected">
+      <img class="superhero-image"
+           ng-src="{{vm.selectedHero.photo_url}}"
+           alt="photo of {{vm.selectedHero.name}}">
+    </div>
+
     <!-- searchText  -->
-    <ul class="column">
+    <ul class="row">
       <li ng-repeat="hero in vm.superheros | filter: { name: vm.searchText }"
           ng-class="vm.getComicAffiliation(hero)"
+          class="superhero"
           class="column">
 
           <h4>{{hero.name}}</h4>
@@ -34,12 +41,6 @@
                   ng-class="vm.getComicAffiliation(hero)">
           See Image
           </button>
-          <div class="image-wrapper">
-            <img class="superhero-image"
-                 ng-show="hero == vm.selectedHero"
-                 ng-src="{{hero.photo_url}}"
-                 alt="photo of {{hero.name}}">
-          </div>
       </li>
     </ul>
   </div>
