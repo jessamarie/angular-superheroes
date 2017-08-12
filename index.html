@@ -33,7 +33,7 @@
       <li ng-repeat="hero in vm.superheros | filter: { name: vm.searchText }"
           ng-class="vm.getComicAffiliation(hero)"
           class="superhero"
-          class="column">
+          class="row">
 
           <h4>{{hero.name}}</h4>
           <p>{{hero.phonenumber}}</p>
@@ -43,6 +43,24 @@
           </button>
       </li>
     </ul>
+
+    <div class="newSuperhero" ng-controller="SuperherosFormController as vm">
+      <h4>Add New Hero</h4>
+      <label for="name-input">Name</label>
+      <input type="text" id="name-input" name="name" value="" ng-model="vm.newName">
+
+      <label for="number-input">Number</label>
+      <input type="text" id="number-input" name="name" value="" ng-model="vm.newNumber">
+
+      <label for="url-input">Photo Url</label>
+      <input type="text" id="url-input" name="name" value="" ng-model="vm.newUrl">
+
+      <label for="affiliation-input">Affiliation</label>
+      <input type="text" id="affiliation-input" name="name" value="" ng-model="vm.newAffiliation">
+
+      <button ng-click="vm.addSuperhero()">Add</button>
+    </div>
+
   </div>
 
 </body>

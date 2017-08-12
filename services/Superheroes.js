@@ -135,7 +135,8 @@
     ]
 
     return {
-      all: all
+      all: all,
+      add: add
     }
 
     function all () {
@@ -143,6 +144,15 @@
         var textA = a.name.toUpperCase()
         var textB = b.name.toUpperCase()
         return (textA < textB) ? -1 : (textA > textB) ? 1 : 0
+      })
+    }
+
+    function add (heroName, number, url, affil) {
+      superheros.push({
+        name: heroName,
+        phonenumber: number,
+        photo_url: url,
+        affiliation: affil
       })
     }
   } // end SuperherosService
