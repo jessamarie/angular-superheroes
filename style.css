@@ -1,7 +1,19 @@
-body, h1, div, input, span, ul, li, h4, p, button, img {
+body, div, header, button, input, span, ul, li, h3, h4, p, button, img {
   margin: 0;
   padding: 0;
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center { justify-content: center; }
 
 body {
   width: 100vw;
@@ -16,78 +28,21 @@ body {
   margin: 0 auto;
 }
 
-.header {
-  margin-bottom: 5px;
-}
-
-#search-input {
-  text-align: center;
-}
-
 h1 {
   font-size: 50px;
+  margin: 20px 0 10px 0;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-}
-
-ul {
-  justify-content: center;
-  width: 100%;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-
-li, .newSuperhero {
+.search {
   border: 1px solid black;
-  list-style-type: none;
-  margin: 1px;
-}
-
-.superhero {
-  width: 150px;
-  height: 100px;
-}
-
-.newSuperhero {
-  margin-top: 20px;
-  width: auto;
-}
-
-.superhero-info {
-  /*margin: */
-  /*margin: auto auto;*/
-  align-items: center;
-}
-
-.superhero-image {
-  margin: 0 auto;
-}
-
-.marvel {
-  border: 2px solid red;
-}
-
-.dccomics {
-  border: 2px solid skyblue;
-}
-
-button {
-  background-color: #FFFFFF;
-  margin: 1px auto;
-  width: 40%;
+  text-align: center;
+  font-size: 2.5vw;
+  margin: 10px 0 20px 0;
+  width: 35%;
 }
 
 .image-wrapper {
   align-self: center;
-  justify-content: center;
   width: 200px;
   height: 250px;
   margin: 5px auto 10px auto;
@@ -98,5 +53,50 @@ img {
     min-height: 100%;
     min-width: 100%;
     display: flex;
-    margin: 2px;
+    margin: auto;
 }
+
+ul {
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+li {
+  list-style-type: none;
+  margin: 1px;
+  width: 150px;
+  height: 100px;
+}
+
+.superheroForm {
+  margin-top: 20px;
+  width: auto;
+}
+
+button {
+  background-color: #FFFFFF;
+  margin: 1px auto;
+  width: 40%;
+}
+
+form {
+  border: 1px solid black;
+  margin: 5px 0;
+}
+
+form input {
+  text-align: center;
+}
+
+.marvelBorder { border: 2px solid red; }
+
+.dccomicsBorder { border: 2px solid skyblue; }
+
+.marvelIcon { color: red; }
+
+.marvelIcon:hover { color: darkred; }
+
+.dccomicsIcon { color: skyblue; }
+
+.dccomicsIcon:hover { color: blue; }
