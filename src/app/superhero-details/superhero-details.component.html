@@ -1,0 +1,12 @@
+<div class="showHero"
+     id="{{superhero.id}}">
+  <h3>{{superhero.name}}</h3>
+  <p>{{superhero.phonenumber}}</p>
+
+  <div class="superhero-img-wrapper"
+       [ngClass]="affiliation">
+       <img class="superhero-img"
+            [src]="superhero.photo_url"
+            alt="photo of {{superhero.name}}">
+  </div>
+</div>

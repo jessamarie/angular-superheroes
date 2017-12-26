@@ -1,3 +1,5 @@
+<app-superhero-details *ngIf="selectedHero" [superhero]="selectedHero" [affiliation]="getAffiliationClass(selectedHero)"></app-superhero-details>
+
 <ul class="superheroes row justify-center">
   <li *ngFor="let superhero of superheroes"
       class="superhero border"
@@ -5,14 +7,14 @@
 
     <h4>{{superhero.name}}</h4>
     <p>{{superhero.phonenumber}}</p>
-      <div ngClass="">
+      <div (click)="selectSuperhero(superhero)">
         <i class="fa fa-picture-o fa-lg icon"
             aria-hidden="true">
         </i>
       </div>
   </li>
-  <li class="superhero">
+  <!-- <li class="superhero">
     <p>add hero</p>
-  </li>
+  </li> -->
 
 </ul>
