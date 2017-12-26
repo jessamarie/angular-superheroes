@@ -3,7 +3,7 @@
 <ul class="superheroes row justify-center">
   <li *ngFor="let superhero of superheroes"
       class="superhero border"
-      [ngClass]="getAffiliationClass(superhero)">
+      [ngClass]="this.getAffiliationClass(superhero)">
 
     <h4>{{superhero.name}}</h4>
     <p>{{superhero.phonenumber}}</p>

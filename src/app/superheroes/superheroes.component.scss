@@ -9,33 +9,4 @@
   margin: 1px;
   width: 150px;
   height: 100px;
-  border: 2px solid black;
-}
-
-.marvel {
-  .icon {  color: red; }
-
-  &.border {
-    border: 2px solid red;
-  }
-
-  &:hover {
-    color: darkred;
-
-    .icon { color: darkred; }
-  }
-}
-
-.dccomics {
-  .icon { color: skyblue; }
-
-  &.border {
-    border: 2px solid skyblue;
-  }
-
-  &:hover {
-    color: blue;
-
-    .icon { color: blue; }
-   }
 }
