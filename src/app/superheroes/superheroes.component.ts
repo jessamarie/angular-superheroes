@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core'
 import { Superhero } from '../superhero'
 import { SUPERHEROES } from '../mock-superheroes'
 
+import { SuperheroService } from '../superhero.service'
+
 
 @Component({
   selector: 'app-superheroes',
@@ -19,30 +21,28 @@ export class SuperheroesComponent implements OnInit {
  /**
   * Create the superhero list
   */
-  constructor() {
-    this.superheroes = SUPERHEROES
-  }
-
-  ngOnInit() {
+  constructor(public superheroService: SuperheroService) {
   }
 
  /**
-  * Get the class of the current hero based on
-  * it's affiliation
-  * @param {Superhero} superhero the hero
-  * @return {string} the class for the affiliation
+  * initialize superhero list
+  */
+  ngOnInit() {
+    this.superheroes = this.superheroService.getSuperheroes()
+  }
+
+ /**
+  * Get the class of the current superhero based on
+  * comic book affiliation
   */
   getAffiliationClass(superhero): string {
-
-    const affiliation = superhero.affiliation
-
-    return affiliation.replace(/\s+/g, '').toLowerCase();
+    return this.superheroService.getAffiliationClass(superhero)
   }
 
  /**
-  * Select the hero that the user clicks on
+  * Select the superhero that the user clicks on
   *
-  * @param {Superhero} superhero the hero selected by the user
+  * @param {Superhero} superhero the superhero selected by the user
   */
   selectSuperhero(superhero): void {
     this.selectedHero = superhero

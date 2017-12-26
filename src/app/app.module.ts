@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SuperheroesComponent } from './superheroes/superheroes.component';
 import { SuperheroDetailsComponent } from './superhero-details/superhero-details.component'
-
+import { SuperheroService } from './superhero.service'
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { SuperheroDetailsComponent } from './superhero-details/superhero-details
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [SuperheroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

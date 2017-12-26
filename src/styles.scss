@@ -8,12 +8,10 @@ body, div, header, button, input, span, ul, li, h3, h4, p, button, img {
 }
 
 body {
-  width: 100vw;
-  height: 100vw;
   text-align: center;
   font-family: 'Saira Extra Condensed', sans-serif;
-  // width:80%;
-  // height:100%;
+  width:80%;
+  height:100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -28,3 +26,37 @@ body {
 }
 
 .justify-center { justify-content: center; }
+
+.marvel {
+  .icon {  color: red; }
+
+  &.border {
+    border: 2px solid red;
+  }
+
+  &:hover {
+    color: darkred;
+
+    .icon { color: darkred; }
+  }
+}
+
+.dccomics {
+  .icon { color: skyblue; }
+
+  &.border {
+    border: 2px solid skyblue;
+  }
+
+  &:hover {
+    color: blue;
+
+    .icon { color: blue; }
+   }
+}
+
+.no-affiliation {
+  &.border {
+    border: 2px solid black;
+  }
+}
