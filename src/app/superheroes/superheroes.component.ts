@@ -14,10 +14,11 @@ import { SUPERHEROES } from '../mock-superheroes'
 export class SuperheroesComponent implements OnInit {
 
   superheroes: Superhero[]
+  selectedHero: Superhero
 
-  /**
-   * Create the superhero list
-   */
+ /**
+  * Create the superhero list
+  */
   constructor() {
     this.superheroes = SUPERHEROES
   }
@@ -25,17 +26,26 @@ export class SuperheroesComponent implements OnInit {
   ngOnInit() {
   }
 
-  /**
+ /**
   * Get the class of the current hero based on
   * it's affiliation
-  * @param {Superhero} hero the hero
+  * @param {Superhero} superhero the hero
   * @return {string} the class for the affiliation
   */
-  getAffiliationClass(hero): string {
+  getAffiliationClass(superhero): string {
 
-    const affiliation = hero.affiliation
+    const affiliation = superhero.affiliation
 
     return affiliation.replace(/\s+/g, '').toLowerCase();
+  }
+
+ /**
+  * Select the hero that the user clicks on
+  *
+  * @param {Superhero} superhero the hero selected by the user
+  */
+  selectSuperhero(superhero): void {
+    this.selectedHero = superhero
   }
 
 }
