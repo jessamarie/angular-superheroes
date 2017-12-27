@@ -9,4 +9,31 @@
   margin: 1px;
   width: 150px;
   height: 100px;
+
+  justify-content: center;
+  // height: 100%;
+
+  button {
+    background-color: #FFFFFF;
+    margin: 1px auto;
+    border: 1px solid black;
+    width: 40%;
+  }
+}
+
+.superheroForm {
+  flex: 1;
+  height: 100%;
+
+  justify-content: space-around;
+  align-items: center;
+
+  input {
+    text-align: center;
+  }
+}
+
+.affiliation {
+  width: 100%;
+  justify-content: space-around;
 }
