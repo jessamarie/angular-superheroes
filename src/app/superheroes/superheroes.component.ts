@@ -17,11 +17,13 @@ export class SuperheroesComponent implements OnInit {
 
   superheroes: Superhero[]
   selectedHero: Superhero
+  newSuperhero: Superhero
 
  /**
   * Create the superhero list
   */
   constructor(public superheroService: SuperheroService) {
+    this.newSuperhero = new Superhero();
   }
 
  /**
