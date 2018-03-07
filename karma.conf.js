@@ -1,5 +1,4 @@
 // Karma configuration
-// Generated on Wed Jan 27 2016 14:11:34 GMT-0200 (Horário brasileiro de verão)
 
 module.exports = function (config) {
   var APP_ROOT_PATH = './'
