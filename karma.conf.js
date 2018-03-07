@@ -23,14 +23,8 @@ module.exports = function (config) {
 
       /* Application files */
       APP_ROOT_PATH + 'app.js',
-      APP_ROOT_PATH + 'controllers/*.js',
-      APP_ROOT_PATH + 'services/*.js',
-      APP_ROOT_PATH + 'tests/*.js'
-
-      // APP_ROOT_PATH + '**/*.js', {
-      //   pattern: 'tests/*.tests.js',
-      //   included: true
-      // },
+      APP_ROOT_PATH + 'src/**/*.js'
+      // OR tests last?
     ],
 
     // list of files to exclude
@@ -40,8 +34,7 @@ module.exports = function (config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       'app.js': 'coverage',
-      'controllers/*.js': 'coverage',
-      'services/*.js': 'coverage',
+      'src/**/!(*.test).js': 'coverage',
       'tests/*.test.js': 'browserify'
     },
 
