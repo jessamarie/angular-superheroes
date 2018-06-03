@@ -1,0 +1,54 @@
+<div [ngClass]="newSuperhero.affiliation"
+     class="create-superhero-container">
+
+  <i class="fa fa-plus fa-4x create-superhero-open"
+     *ngIf="!addHero"
+     (click)="addHero = true"
+     aria-hidden="true">
+  </i>
+
+  <form class="create-superhero-form"
+        #superheroForm="ngForm"
+        *ngIf="addHero">
+
+    <div class="row toolbar">
+      <h3>Add Hero</h3>
+    </div>
+
+    <input type="text"
+           placeholder="name"
+           [(ngModel)]="newSuperhero.name"
+           name="name"
+           #name="ngModel">
+    <input type="text"
+           placeholder="phone number"
+           [(ngModel)]="newSuperhero.phonenumber"
+           name="phonenumber"
+           #phoneNumber="ngModel">
+    <input type="text"
+           placeholder="image url"
+           [(ngModel)]="newSuperhero.photo_url"
+           name="photo_url"
+           #photo_url="ngModel">
+
+    <div class="row choose-affiliation">
+      <input type="radio"
+             name="affiliation"
+             value="marvel"
+             [(ngModel)]="newSuperhero.affiliation"
+             (ngModelChange)="this.change()">marvel
+      <input type="radio"
+             name="affiliation"
+             value="dccomics"
+             [(ngModel)]="newSuperhero.affiliation"
+             (ngModelChange)="this.change()">dc comics
+    </div>
+
+    <div class="row toolbar">
+      <i (click)="addHero = false" class="fa fa-times-circle" aria-hidden="true"></i>
+      <i class="fa fa-plus-circle" aria-hidden="true"></i>
+    </div>
+
+  </form>
+
+</div>

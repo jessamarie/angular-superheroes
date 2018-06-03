@@ -17,13 +17,13 @@ export class SuperheroesComponent implements OnInit {
 
   superheroes: Superhero[]
   selectedHero: Superhero
-  newSuperhero: Superhero
+  affiliation: string
 
  /**
   * Create the superhero list
   */
   constructor(public superheroService: SuperheroService) {
-    this.newSuperhero = new Superhero();
+    this.affiliation = ''
   }
 
  /**
@@ -48,6 +48,11 @@ export class SuperheroesComponent implements OnInit {
   */
   selectSuperhero(superhero): void {
     this.selectedHero = superhero
+  }
+
+  onAffiliationChange(event): void {
+    this.affiliation = event
+    console.log('event:', event)
   }
 
 }

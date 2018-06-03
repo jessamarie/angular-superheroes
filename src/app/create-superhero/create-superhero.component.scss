@@ -1,0 +1,50 @@
+@import "./src/shared.scss";
+
+
+:host {
+  height: 100%;
+
+  .create-superhero-container {
+    height: 100%;
+    @include row-center();
+
+    .create-superhero-open {}
+
+    .create-superhero-form {
+      flex: 1;
+
+      @include column-spaced-center();
+      align-self:stretch;
+
+
+      .toolbar {
+        width: 100%;
+        justify-content: space-around;
+      }
+
+      input {
+        text-align: center;
+        border: none;
+        border-bottom: 1px dashed #000;
+
+        &:focus {
+          border-bottom: 1px dashed red;
+          outline: none;
+        }
+      }
+
+      .choose-affiliation {
+        width: 90%;
+        justify-content: space-around;
+        align-items: center;
+
+        input {
+          margin: 0 auto;
+        }
+      }
+
+    }
+
+  }
+
+}
