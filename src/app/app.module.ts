@@ -1,18 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
 import { SuperheroesComponent } from './superheroes/superheroes.component';
 import { SuperheroDetailsComponent } from './superhero-details/superhero-details.component'
-import { SuperheroService } from './superhero.service'
+import { SuperheroService } from './superhero.service';
+import { CreateSuperheroComponent } from './create-superhero/create-superhero.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     SuperheroesComponent,
-    SuperheroDetailsComponent
+    SuperheroDetailsComponent,
+    CreateSuperheroComponent
   ],
   imports: [
     BrowserModule,

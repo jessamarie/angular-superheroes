@@ -1,0 +1,31 @@
+/* Common flex styles */
+
+// .box { @include border-radius(10px); }
+
+@mixin flex($direction, $justify-content, $align-items){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+// @include myMixin(false, $myOtherVariable) {
+//   @if not $myVariable {
+//      //do something
+//   } @else {
+//     //do something else
+//   }
+// }
+
+@mixin row-center() {
+  @include flex(row, center, center);
+}
+
+@mixin column-spaced-center() {
+  @include flex(column, space-around, center);
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}

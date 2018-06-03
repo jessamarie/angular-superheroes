@@ -1,43 +1,23 @@
-<app-superhero-details *ngIf="selectedHero" [superhero]="selectedHero" [affiliation]="getAffiliationClass(selectedHero)"></app-superhero-details>
+<app-superhero-details *ngIf="selectedHero"
+                       [superhero]="selectedHero"
+                       [affiliation]="getAffiliationClass(selectedHero)">
+</app-superhero-details>
 
 <ul class="superheroes row justify-center">
-  <li *ngFor="let superhero of superheroes"
-      class="superhero column border"
-      [ngClass]="this.getAffiliationClass(superhero)">
 
+  <li class="superhero border" [ngClass]="affiliation">
+    <app-create-superhero (changeAffiliation)="onAffiliationChange($event)"></app-create-superhero>
+  </li>
+
+  <li class="superhero column border"
+      [ngClass]="getAffiliationClass(superhero)"
+      *ngFor="let superhero of superheroes">
     <h4>{{superhero.name}}</h4>
     <p>{{superhero.phonenumber}}</p>
       <div (click)="selectSuperhero(superhero)">
         <i class="fa fa-picture-o fa-lg icon"
-            aria-hidden="true">
+           aria-hidden="true">
         </i>
       </div>
   </li>
-  <li class="superhero column no-affiliation border">
-    <button *ngIf="!addHero" (click)="addHero = true">Add hero</button>
-    <form *ngIf="addHero" #superheroForm="ngForm" class="column superheroForm">
-      <input type="text"
-             placeholder="name"
-             [(ngModel)]="newSuperhero.name"
-             name="name"
-             #name="ngModel">
-      <input type="text"
-             placeholder="phone number"
-             [(ngModel)]="newSuperhero.phonenumber"
-             name="phonenumber"
-             #phoneNumber="ngModel">
-      <input type="text"
-             placeholder="image url"
-             [(ngModel)]="newSuperhero.photo_url"
-             name="photo_url"
-             #photo_url="ngModel">
-      <div class="row affiliation">
-        <input type="radio" name="affiliation" value="marvel" [(ngModel)]="newSuperhero.affiliation">
-        <input type="radio" name="affiliation" value="dc comics" [(ngModel)]="newSuperhero.affiliation">
-      </div>
-    </form>
-
-
-  </li>
-
 </ul>

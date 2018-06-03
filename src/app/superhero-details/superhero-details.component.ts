@@ -7,7 +7,7 @@ import { Superhero } from '../superhero'
   styleUrls: ['./superhero-details.component.scss']
 })
 
-/** Class representing a superheroes. */
+/** Class representing a superhero. */
 export class SuperheroDetailsComponent implements OnInit {
 
   @Input() superhero: Superhero
