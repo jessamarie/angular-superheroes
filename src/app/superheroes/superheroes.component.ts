@@ -18,12 +18,14 @@ export class SuperheroesComponent implements OnInit {
   superheroes: Superhero[]
   selectedHero: Superhero
   affiliation: string
+  editMode: boolean
 
  /**
   * Create the superhero list
   */
   constructor(public superheroService: SuperheroService) {
     this.affiliation = ''
+    this.editMode = false;
   }
 
  /**
@@ -50,9 +52,17 @@ export class SuperheroesComponent implements OnInit {
     this.selectedHero = superhero
   }
 
+  unselectSuperhero(): void {
+    this.selectedHero = null;
+  }
+
   onAffiliationChange(event): void {
     this.affiliation = event
     console.log('event:', event)
+  }
+
+  toggleEditMode() {
+    this.editMode = !this.editMode
   }
 
 }
