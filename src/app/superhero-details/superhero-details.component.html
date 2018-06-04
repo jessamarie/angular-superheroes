@@ -1,13 +1,16 @@
-<div class="showHero"
-     id="{{superhero.id}}">
-  <h3>{{superhero.name}}  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-</h3>
-  <p>{{superhero.phonenumber}}</p>
+<div class="superhero-details-container"
+     [ngClass]="superhero ? 'showHero' : ''">
 
-  <div class="superhero-img-wrapper justify-center border"
-       [ngClass]="affiliation">
-       <img class="superhero-img"
-            [src]="superhero.photo_url"
-            alt="photo of {{superhero.name}}">
+  <div class="superhero-details-wrapper"
+       id="{{superhero.id}}">
+       <h3>{{superhero.name}}</h3>
+       <p>{{superhero.phonenumber}}</p>
+
+       <div class="superhero-img-wrapper justify-center border"
+            [ngClass]="affiliation">
+            <img class="superhero-img"
+                 [src]="superhero.photo_url"
+                 alt="photo of {{superhero.name}}">
+      </div>
   </div>
 </div>
