@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { SuperheroesComponent } from './superheroes/superheroes.component';
@@ -20,7 +20,8 @@ import { EditSuperheroComponent } from './edit-superhero/edit-superhero.componen
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [SuperheroService],
   bootstrap: [AppComponent]

@@ -1,10 +1,8 @@
-<span class="row edit-mode"
+<!-- <span class="row edit-mode"
       tooltip="Toggle Edit Mode"
       (click)="toggleEditMode()">
-  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-  <span *ngIf="!editMode">Off</span>
-  <span *ngIf="editMode">On</span>
-</span>
+      <span> <fa-icon [icon]="editMode ? faToggleOn : faToggleOff" title="Edit Mode"></fa-icon> Show Edit Mode</span>
+</span> -->
 
 <div class="phonebook-wrapper">
   <div class="phonebook-binding"></div>
@@ -20,11 +18,8 @@
         [ngClass]="getAffiliationClass(superhero)"
         (click)="selectSuperhero(superhero)"
         *ngFor="let superhero of superheroes">
-      <h2>{{superhero.name}}</h2>
-      <i class="fa fa-pencil-square-o"
-         *ngIf="editMode"
-         aria-hidden="true">
-       </i>
+        <h2>{{superhero.name}}</h2>
+        <fa-icon *ngIf="editMode" [icon]="faEdit" title="Edit Mode"></fa-icon>
     </li>
   </ul>
 </div>

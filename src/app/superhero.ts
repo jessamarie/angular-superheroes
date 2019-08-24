@@ -1,7 +1,9 @@
 export class Superhero {
   id: string
   name: string
-  phonenumber: string
-  photo_url: string
+  phoneNumber: string
+  strengths: Array<string>
+  weaknesses: Array<string>
+  photoUrl: string
   affiliation: string
 }
