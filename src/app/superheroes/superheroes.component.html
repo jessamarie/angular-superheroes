@@ -2,8 +2,8 @@
       tooltip="Toggle Edit Mode"
       (click)="toggleEditMode()">
   <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-  <span *ngIf="editMode">Off</span>
-  <span *ngIf="!editMode">On</span>
+  <span *ngIf="!editMode">Off</span>
+  <span *ngIf="editMode">On</span>
 </span>
 
 <div class="phonebook-wrapper">
@@ -11,7 +11,8 @@
 
   <ul class="superheroes row">
 
-    <li class="superhero border" [ngClass]="affiliation">
+    <li class="superhero border"
+        [ngClass]="affiliation">
       <app-create-superhero (changeAffiliation)="onAffiliationChange($event)"></app-create-superhero>
     </li>
 
@@ -20,10 +21,19 @@
         (click)="selectSuperhero(superhero)"
         *ngFor="let superhero of superheroes">
       <h2>{{superhero.name}}</h2>
-      <i class="fa fa-pencil-square-o" *ngIf="editMode" aria-hidden="true"></i>
+      <i class="fa fa-pencil-square-o"
+         *ngIf="editMode"
+         aria-hidden="true">
+       </i>
     </li>
   </ul>
 </div>
+
+<app-edit-superhero *ngIf="selectedHero && editMode"
+                    [superhero]="selectedHero"
+                    [affiliation]="getAffiliationClass(selectedHero)"
+                    (click)="unselectSuperhero()">
+</app-edit-superhero>
 
 <app-superhero-details *ngIf="selectedHero && !editMode"
                        [superhero]="selectedHero"

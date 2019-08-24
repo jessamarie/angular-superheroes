@@ -7,14 +7,16 @@ import { AppComponent } from './app.component';
 import { SuperheroesComponent } from './superheroes/superheroes.component';
 import { SuperheroDetailsComponent } from './superhero-details/superhero-details.component'
 import { SuperheroService } from './superhero.service';
-import { CreateSuperheroComponent } from './create-superhero/create-superhero.component'
+import { CreateSuperheroComponent } from './create-superhero/create-superhero.component';
+import { EditSuperheroComponent } from './edit-superhero/edit-superhero.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     SuperheroesComponent,
     SuperheroDetailsComponent,
-    CreateSuperheroComponent
+    CreateSuperheroComponent,
+    EditSuperheroComponent
   ],
   imports: [
     BrowserModule,

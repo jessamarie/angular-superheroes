@@ -1,0 +1,42 @@
+<div class="superhero-details-container"
+     [ngClass]="superhero ? 'showHero' : ''">
+
+  <div class="superhero-details-wrapper"
+       id="{{superhero.id}}">
+       <input type="text"
+              placeholder="name"
+              [(ngModel)]="superhero.name"
+              name="name"
+              #name="ngModel">
+       <input type="text"
+              placeholder="phone number"
+              [(ngModel)]="superhero.phonenumber"
+              name="phonenumber"
+              #phoneNumber="ngModel">
+       <input type="text"
+              placeholder="image url"
+              [(ngModel)]="superhero.photo_url"
+              name="photo_url"
+              #photo_url="ngModel">
+
+       <div class="row choose-affiliation">
+         <input type="radio"
+                name="affiliation"
+                value="marvel"
+                [(ngModel)]="superhero.affiliation"
+                (ngModelChange)="this.change()">marvel
+         <input type="radio"
+                name="affiliation"
+                value="dccomics"
+                [(ngModel)]="superhero.affiliation"
+                (ngModelChange)="this.change()">dc comics
+       </div>
+
+       <div class="superhero-img-wrapper justify-center border"
+            [ngClass]="affiliation">
+            <img class="superhero-img"
+                 [src]="superhero.photo_url"
+                 alt="photo of {{superhero.name}}">
+      </div>
+  </div>
+</div>
