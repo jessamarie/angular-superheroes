@@ -1,13 +1,15 @@
 {
   "name": "angular-superheroes",
   "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "compodoc": "./node_modules/.bin/compodoc -p ./tsconfig.json"
   },
   "private": true,
   "dependencies": {
@@ -16,9 +18,11 @@
     "@angular/compiler": "~8.2.3",
     "@angular/core": "~8.2.3",
     "@angular/forms": "~8.2.3",
+    "@angular/http": "~8.2.3",
     "@angular/platform-browser": "~8.2.3",
     "@angular/platform-browser-dynamic": "~8.2.3",
     "@angular/router": "~8.2.3",
+    "font-awesome": "^4.7.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
