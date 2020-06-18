@@ -1,7 +1,7 @@
-<div class="superhero-details-container"
+<div class="edit-superhero-container"
      [ngClass]="superhero ? 'showHero' : ''">
 
-  <div class="superhero-details-wrapper"
+  <div class="edit-superhero-wrapper"
        id="{{superhero.id}}">
        <input type="text"
               placeholder="name"
@@ -10,12 +10,12 @@
               #name="ngModel">
        <input type="text"
               placeholder="phone number"
-              [(ngModel)]="superhero.phonenumber"
+              [(ngModel)]="superhero.phoneNumber"
               name="phonenumber"
               #phoneNumber="ngModel">
        <input type="text"
               placeholder="image url"
-              [(ngModel)]="superhero.photo_url"
+              [(ngModel)]="superhero.photoUrl"
               name="photo_url"
               #photo_url="ngModel">
 
@@ -35,7 +35,7 @@
        <div class="superhero-img-wrapper justify-center border"
             [ngClass]="affiliation">
             <img class="superhero-img"
-                 [src]="superhero.photo_url"
+                 [src]="superhero.photoUrl"
                  alt="photo of {{superhero.name}}">
       </div>
   </div>

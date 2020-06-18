@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
 
 import { Superhero } from '../superhero'
 
@@ -10,7 +10,6 @@ import { Superhero } from '../superhero'
 export class CreateSuperheroComponent implements OnInit {
   newSuperhero: Superhero
   @Output() changeAffiliation: EventEmitter<string> = new EventEmitter();
-
 
   constructor() {
     this.newSuperhero = new Superhero();
