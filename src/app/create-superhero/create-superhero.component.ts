@@ -9,10 +9,13 @@ import { Superhero } from '../superhero'
 })
 export class CreateSuperheroComponent implements OnInit {
   newSuperhero: Superhero
+  addHero: boolean
+
   @Output() changeAffiliation: EventEmitter<string> = new EventEmitter();
 
   constructor() {
     this.newSuperhero = new Superhero();
+    this.addHero = false;
   }
 
   ngOnInit() {

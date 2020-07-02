@@ -120,11 +120,11 @@ export const SUPERHEROES: Superhero[] = [
   },
   {
     id: '14',
-    name: 'Cyborg',
+    name: 'Starfire',
     phoneNumber: '555-555-9857',
     strengths: [],
     weaknesses: [],
-    photoUrl: 'http://i.imgur.com/CZPlD1Zm.jpg',
+    photoUrl: 'https://i.imgur.com/WgMes7Pm.jpg',
     affiliation: 'DC Comics'
   },
   {
@@ -133,7 +133,7 @@ export const SUPERHEROES: Superhero[] = [
     phoneNumber: '555-555-1239',
     strengths: [],
     weaknesses: [],
-    photoUrl: 'https://i.imgur.com/XhFCDegm.jpg',
+    photoUrl: 'https://i.imgur.com/nPjxwF5m.jpeg',
     affiliation: 'DC Comics'
   },
   {
@@ -160,7 +160,7 @@ export const SUPERHEROES: Superhero[] = [
     phoneNumber: '555-555-2259',
     strengths: [],
     weaknesses: [],
-    photoUrl: 'https://i.imgur.com/5DebNIAm.png',
+    photoUrl: 'https://i.imgur.com/rNhpSFHm.jpg',
     affiliation: 'DC Comics'
   },
   {
