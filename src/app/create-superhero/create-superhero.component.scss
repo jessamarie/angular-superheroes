@@ -6,6 +6,7 @@
 
   .create-superhero-container {
     height: 100%;
+    padding: 1px 2px;
     @include row-center();
 
     .create-superhero-open {}
@@ -17,9 +18,14 @@
       align-self:stretch;
 
 
-      .toolbar {
+      .header {
         width: 100%;
         justify-content: space-around;
+      }
+
+      .actions {
+        width: 100%;
+        justify-content: space-between;
       }
 
       input {
