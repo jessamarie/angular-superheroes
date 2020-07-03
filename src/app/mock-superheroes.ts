@@ -1,8 +1,8 @@
 import { Superhero } from './superhero'
 
-export const SUPERHEROES: Superhero[] = [
+export const SUPERHEROES = [
   {
-    id: '1',
+    id: 1,
     name: 'Superman',
     phoneNumber: '555-555-5190',
     strengths: ['flying', 'laser eyes', 'superstrength'],
@@ -11,7 +11,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'DC Comics'
   },
   {
-    id: '2',
+    id: 2,
     name: 'Batman',
     phoneNumber: '555-555-5245',
     strengths: ['smart-thinking', 'stalking', 'driving'],
@@ -20,7 +20,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'DC Comics'
   },
   {
-    id: '3',
+    id: 3,
     name: 'Iron Man',
     phoneNumber: '555-555-6523',
     strengths: ['flying', 'laser canons'],
@@ -29,7 +29,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'Marvel'
   },
   {
-    id: '4',
+    id: 4,
     name: 'Spider Man',
     phoneNumber: '555-555-4324',
     strengths: ['spidy senses', 'climbing walls', 'making webs'],
@@ -38,7 +38,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'Marvel'
   },
   {
-    id: '5',
+    id: 5,
     name: 'The Hulk',
     phoneNumber: '555-555-4321',
     strengths: ['superstrength', 'crushing', 'anger'],
@@ -47,7 +47,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'Marvel'
   },
   {
-    id: '6',
+    id: 6,
     name: 'Thor',
     phoneNumber: '555-555-5453',
     strengths: ['thunder powers', 'superstrength'],
@@ -56,7 +56,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'Marvel'
   },
   {
-    id: '7',
+    id: 7,
     name: 'Captain America',
     phoneNumber: '555-555-1234',
     strengths: ['strength', 'patriotism'],
@@ -65,7 +65,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'Marvel'
   },
   {
-    id: '8',
+    id: 8,
     name: 'Wolverine',
     phoneNumber: '555-555-4345',
     strengths: ['hand knives', 'healing', 'handsomeness'],
@@ -74,7 +74,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'Marvel'
   },
   {
-    id: '9',
+    id: 9,
     name: 'Captain Marvel',
     phoneNumber: '555-555-1432',
     strengths: ['flying', 'laser hands', 'female empowerment'],
@@ -83,7 +83,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'Marvel'
   },
   {
-    id: '10',
+    id: 10,
     name: 'Flash',
     phoneNumber: '555-555-4345',
     strengths: ['speed', 'super speed', 'fat'],
@@ -92,7 +92,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'DC Comics'
   },
   {
-    id: '11',
+    id: 11,
     name: 'Wonder Woman',
     phoneNumber: '555-555-5672',
     strengths: ['flying', 'superstrength', 'lasso of truth'],
@@ -101,7 +101,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'DC Comics'
   },
   {
-    id: '12',
+    id: 12,
     name: 'Green Lantern',
     phoneNumber: '555-555-9081',
     strengths: [],
@@ -110,7 +110,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'DC Comics'
   },
   {
-    id: '13',
+    id: 13,
     name: 'Aqua Man',
     phoneNumber: '555-555-9341',
     strengths: [],
@@ -119,7 +119,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'DC Comics'
   },
   {
-    id: '14',
+    id: 14,
     name: 'Starfire',
     phoneNumber: '555-555-9857',
     strengths: [],
@@ -128,7 +128,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'DC Comics'
   },
   {
-    id: '15',
+    id: 15,
     name: 'Green Arrow',
     phoneNumber: '555-555-1239',
     strengths: [],
@@ -137,7 +137,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'DC Comics'
   },
   {
-    id: '16',
+    id: 16,
     name: 'Raven',
     phoneNumber: '555-555-6739',
     strengths: [],
@@ -146,7 +146,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'DC Comics'
   },
   {
-    id: '17',
+    id: 17,
     name: 'Robin',
     phoneNumber: '555-555-1564',
     strengths: [],
@@ -155,7 +155,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'DC Comics'
   },
   {
-    id: '18',
+    id: 18,
     name: 'Supergirl',
     phoneNumber: '555-555-2259',
     strengths: [],
@@ -164,7 +164,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'DC Comics'
   },
   {
-    id: '19',
+    id: 19,
     name: 'Hawkman',
     phoneNumber: '555-555-3422',
     strengths: [],
@@ -173,7 +173,7 @@ export const SUPERHEROES: Superhero[] = [
     affiliation: 'DC Comics'
   },
   {
-    id: '20',
+    id: 20,
     name: 'Hawkgirl',
     phoneNumber: '555-555-6454',
     strengths: [],

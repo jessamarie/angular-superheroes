@@ -1,5 +1,5 @@
 export class Superhero {
-  id: string
+  id: number
   name: string
   phoneNumber: string
   strengths: Array<string>

@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 
 import { Superhero } from './superhero'
-import { SUPERHEROES } from './mock-superheroes'
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable()
 export class SuperheroService {
+  private superheroesUrl = 'api/superheroes';
 
-  superheroes: Superhero[] = SUPERHEROES
-
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   /**
    * Return the list of superheroes
    * @return {Superhero[]} An array of superheroes
    */
-  getSuperheroes(): Superhero[] {
-    return this.superheroes
+  getSuperheroes(): Observable<Superhero[]> {
+    return this.http.get<Superhero[]>(this.superheroesUrl);
   }
 
   /**

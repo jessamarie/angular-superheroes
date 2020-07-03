@@ -36,7 +36,8 @@ export class SuperheroesComponent implements OnInit {
   * initialize superhero list
   */
   ngOnInit() {
-    this.superheroes = this.superheroService.getSuperheroes()
+     this.superheroService.getSuperheroes()
+    .subscribe(superheros => this.superheroes = superheros);
   }
 
  /**
