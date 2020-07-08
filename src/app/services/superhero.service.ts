@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Superhero } from './superhero'
+import { Superhero } from '../superhero'
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 

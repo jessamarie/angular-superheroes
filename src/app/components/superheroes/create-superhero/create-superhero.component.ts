@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
 
-import { Superhero } from '../superhero'
 import { faPlus, faTimesCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { Superhero } from 'src/app/superhero'
 
 @Component({
   selector: 'app-create-superhero',

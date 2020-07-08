@@ -4,23 +4,27 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+import { InMemoryDataService }  from './services/in-memory-data.service';
 
 import { AppComponent } from './app.component';
-import { SuperheroesComponent } from './superheroes/superheroes.component';
-import { SuperheroDetailsComponent } from './superhero-details/superhero-details.component'
-import { SuperheroService } from './superhero.service';
-import { CreateSuperheroComponent } from './create-superhero/create-superhero.component';
-import { EditSuperheroComponent } from './edit-superhero/edit-superhero.component'
-import { of } from 'rxjs';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SuperheroesComponent } from './components/superheroes/superheroes.component';
+import { SuperheroDetailsComponent } from './components/superheroes/superhero-details/superhero-details.component';
+import { CreateSuperheroComponent } from './components/superheroes/create-superhero/create-superhero.component';
+import { EditSuperheroComponent } from './components/superheroes/edit-superhero/edit-superhero.component';
+import { SuperheroService } from './services/superhero.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    FooterComponent,
     SuperheroesComponent,
     SuperheroDetailsComponent,
     CreateSuperheroComponent,
-    EditSuperheroComponent
+    EditSuperheroComponent,
+
   ],
   imports: [
     BrowserModule,
