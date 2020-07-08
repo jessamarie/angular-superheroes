@@ -1,32 +1,6 @@
 <div class="container">
-  <span class="row edit-mode" tooltip="Toggle Edit Mode" (click)="toggleEditMode()">
-    <span>
-      <fa-icon [icon]="editMode ? faToggleOn : faToggleOff" title="Edit Mode"></fa-icon> Show Edit Mode
-    </span>
-  </span>
-
   <div class="phonebook-wrapper">
     <div class="phonebook-binding"></div>
-
-    <ul class="superheroes row">
-
-      <li class="superhero border" [ngClass]="affiliation">
-        <app-create-superhero (changeAffiliation)="onAffiliationChange($event)"></app-create-superhero>
-      </li>
-
-      <li class="superhero column border" [ngClass]="getAffiliationClass(superhero)"
-        (click)="selectSuperhero(superhero)" *ngFor="let superhero of superheroes">
-        <h2>{{superhero.name}}</h2>
-        <fa-icon *ngIf="editMode" [icon]="faEdit" title="Edit Mode"></fa-icon>
-      </li>
-    </ul>
+    <app-superhero-list></app-superhero-list>
   </div>
-
-  <app-edit-superhero *ngIf="selectedHero && editMode" [superhero]="selectedHero"
-    [affiliation]="getAffiliationClass(selectedHero)" (click)="unselectSuperhero()">
-  </app-edit-superhero>
-
-  <app-superhero-details *ngIf="selectedHero && !editMode" [superhero]="selectedHero"
-    [affiliation]="getAffiliationClass(selectedHero)" (click)="unselectSuperhero()">
-  </app-superhero-details>
 </div>

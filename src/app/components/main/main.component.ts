@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-import { faPencilAlt, faToggleOn, faToggleOff} from '@fortawesome/free-solid-svg-icons'
-import { SuperheroService } from 'src/app/services/superhero.service'
-import { Superhero } from 'src/app/superhero'
 
 @Component({
   selector: 'app-main',
@@ -9,63 +6,10 @@ import { Superhero } from 'src/app/superhero'
   styleUrls: ['./main.component.scss']
 })
 
-/** Class representing a list of superheroes. */
 export class MainComponent implements OnInit {
 
-  superheroes: Superhero[]
-  selectedHero: Superhero
-  affiliation: string
-  editMode: boolean
-  faToggleOn = faToggleOn
-  faToggleOff = faToggleOff
-  faEdit = faPencilAlt
-
- /**
-  * Create the superhero list
-  */
-  constructor(public superheroService: SuperheroService) {
-    this.affiliation = ''
-    this.editMode = false
+  constructor() {
   }
 
- /**
-  * initialize superhero list
-  */
-  ngOnInit() {
-     this.superheroService.getSuperheroes()
-    .subscribe(superheros => this.superheroes = superheros);
-  }
-
- /**
-  * Get the class of the current superhero based on
-  * comic book affiliation
-  *
-  * @param Superhero superhero the superhero to get the affiliation for
-  */
-  getAffiliationClass(superhero): string {
-    return this.superheroService.getAffiliationClass(superhero)
-  }
-
- /**
-  * Select the superhero that the user clicks on
-  *
-  * @param Superhero superhero the superhero selected by the user
-  */
-  selectSuperhero(superhero): void {
-    this.selectedHero = superhero
-  }
-
-  unselectSuperhero(): void {
-    this.selectedHero = null
-  }
-
-  onAffiliationChange(event): void {
-    this.affiliation = event
-    console.log('event:', event)
-  }
-
-  toggleEditMode() {
-    this.editMode = !this.editMode
-  }
-
+  ngOnInit() { }
 }

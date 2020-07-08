@@ -1,16 +1,4 @@
 :host {
-
-  .edit-mode {
-    // justify-content: flex-start;
-    // align-items: center;
-    // padding: 0 .1vw;
-
-    span {
-      margin-left: 1vw;
-      font-size: 1em;
-    }
-  }
-
   .phonebook-wrapper {
     display: flex;
     justify-content: flex-start;
@@ -20,28 +8,6 @@
       background-color: black;
       width: 2vw;
       flex-grow: 1;
-    }
-
-
-    .superheroes {
-      display: flex;
-      width: 100%;
-      flex-wrap: wrap;
-
-      .superhero {
-        list-style-type: none;
-        margin-right: .1vw;
-        width: 175px;
-        height: 125px;
-        justify-content: flex-start;
-
-        // button {
-        //   background-color: #FFFFFF;
-        //   margin: 1px auto;
-        //   border: none;
-        //   width: 40%;
-        // }
-      }
     }
   }
 }

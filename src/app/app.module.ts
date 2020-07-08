@@ -14,6 +14,7 @@ import { SuperheroDetailsComponent } from './components/main/superhero-details/s
 import { CreateSuperheroComponent } from './components/main/create-superhero/create-superhero.component';
 import { EditSuperheroComponent } from './components/main/edit-superhero/edit-superhero.component';
 import { SuperheroService } from './services/superhero.service';
+import { SuperheroListComponent } from './components/main/superhero-list/superhero-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SuperheroService } from './services/superhero.service';
     MainComponent,
     SuperheroDetailsComponent,
     CreateSuperheroComponent,
-    EditSuperheroComponent
+    EditSuperheroComponent,
+    SuperheroListComponent
   ],
   imports: [
     BrowserModule,

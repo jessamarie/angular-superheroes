@@ -1,0 +1,20 @@
+.superheroes {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+
+    .superhero {
+      list-style-type: none;
+      margin-right: .1vw;
+      width: 175px;
+      height: 125px;
+      justify-content: flex-start;
+
+      // button {
+      //   background-color: #FFFFFF;
+      //   margin: 1px auto;
+      //   border: none;
+      //   width: 40%;
+      // }
+    }
+  }
