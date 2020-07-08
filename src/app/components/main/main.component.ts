@@ -4,13 +4,13 @@ import { SuperheroService } from 'src/app/services/superhero.service'
 import { Superhero } from 'src/app/superhero'
 
 @Component({
-  selector: 'app-superheroes',
-  templateUrl: './superheroes.component.html',
-  styleUrls: ['./superheroes.component.scss']
+  selector: 'app-main',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.scss']
 })
 
 /** Class representing a list of superheroes. */
-export class SuperheroesComponent implements OnInit {
+export class MainComponent implements OnInit {
 
   superheroes: Superhero[]
   selectedHero: Superhero

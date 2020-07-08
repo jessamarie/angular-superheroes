@@ -9,10 +9,10 @@ import { InMemoryDataService }  from './services/in-memory-data.service';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { SuperheroesComponent } from './components/superheroes/superheroes.component';
-import { SuperheroDetailsComponent } from './components/superheroes/superhero-details/superhero-details.component';
-import { CreateSuperheroComponent } from './components/superheroes/create-superhero/create-superhero.component';
-import { EditSuperheroComponent } from './components/superheroes/edit-superhero/edit-superhero.component';
+import { MainComponent } from './components/main/main.component';
+import { SuperheroDetailsComponent } from './components/main/superhero-details/superhero-details.component';
+import { CreateSuperheroComponent } from './components/main/create-superhero/create-superhero.component';
+import { EditSuperheroComponent } from './components/main/edit-superhero/edit-superhero.component';
 import { SuperheroService } from './services/superhero.service';
 
 @NgModule({
@@ -20,11 +20,10 @@ import { SuperheroService } from './services/superhero.service';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SuperheroesComponent,
+    MainComponent,
     SuperheroDetailsComponent,
     CreateSuperheroComponent,
-    EditSuperheroComponent,
-
+    EditSuperheroComponent
   ],
   imports: [
     BrowserModule,
