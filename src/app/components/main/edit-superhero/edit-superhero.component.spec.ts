@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { FormsModule } from '@angular/forms';
 import { EditSuperheroComponent } from './edit-superhero.component';
 
 describe('EditSuperheroComponent', () => {
@@ -8,6 +9,7 @@ describe('EditSuperheroComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ FormsModule ],
       declarations: [ EditSuperheroComponent ]
     })
     .compileComponents();
@@ -16,6 +18,15 @@ describe('EditSuperheroComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(EditSuperheroComponent);
     component = fixture.componentInstance;
+    component.superhero = {
+      id: 1,
+      name: 'name',
+      phoneNumber: '5183333333',
+      strengths: [],
+      weaknesses: [],
+      photoUrl: '',
+      affiliation: 'marvel'
+  };
     fixture.detectChanges();
   });
 

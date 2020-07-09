@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
-import { SuperheroService } from 'src/app/services/superhero.service';
-import { Superhero } from 'src/app/superhero';
+import { SuperheroService } from '../../../services/superhero.service';
+import { Superhero } from '../../../superhero';
 
 @Component({
   selector: 'app-superhero-list',

@@ -1,11 +1,13 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { SuperheroService } from './superhero.service';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 describe('SuperheroService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [SuperheroService]
+      imports: [ HttpClientModule ],
+      providers: [SuperheroService, HttpClient ]
     });
   });
 

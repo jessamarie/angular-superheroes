@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SuperheroListComponent } from './superhero-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('SuperheroListComponent', () => {
   let component: SuperheroListComponent;
@@ -8,6 +9,7 @@ describe('SuperheroListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ HttpClientModule ],
       declarations: [ SuperheroListComponent ]
     })
     .compileComponents();
