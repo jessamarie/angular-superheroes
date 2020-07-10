@@ -1,20 +1,16 @@
 .superheroes {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
 
     .superhero {
       list-style-type: none;
       margin-right: .1vw;
-      width: 175px;
-      height: 125px;
-      justify-content: flex-start;
+      width: 200px;
+      height: 150px;
+      padding: .5em;
 
-      // button {
-      //   background-color: #FFFFFF;
-      //   margin: 1px auto;
-      //   border: none;
-      //   width: 40%;
-      // }
+      .superhero-number {
+        font-size: 1.2rem;
+      }
     }
   }

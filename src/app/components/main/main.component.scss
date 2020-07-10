@@ -1,13 +1,8 @@
-:host {
-  .phonebook-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    height: 100%;
+.phonebook-wrapper {
+  display: flex;
 
-    .phonebook-binding {
-      background-color: black;
-      width: 2vw;
-      flex-grow: 1;
-    }
+  .phonebook-binding {
+    background-color: black;
+    width: 5em;
   }
 }

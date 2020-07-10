@@ -11,11 +11,11 @@ import { Superhero } from '../../../superhero';
 export class SuperheroListComponent implements OnInit {
   superheroes: Superhero[]
   selectedHero: Superhero
-  affiliation: string
+  affiliationClass: string
   faEdit = faPencilAlt
 
   constructor(public superheroService: SuperheroService) {
-    this.affiliation = ''
+    this.affiliationClass = '';
   }
 
  /**
@@ -50,7 +50,7 @@ unselectSuperhero(): void {
 }
 
 onAffiliationChange(event): void {
- this.affiliation = event
+ this.affiliationClass = event
  console.log('event:', event)
 }
 

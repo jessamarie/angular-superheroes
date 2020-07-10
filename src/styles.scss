@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed');
 
 body, div, header, button, input, span, ul, li, h3, h4, p, button, img {
@@ -10,31 +10,20 @@ body, div, header, button, input, span, ul, li, h3, h4, p, button, img {
 body {
   text-align: center;
   font-family: 'Saira Extra Condensed', sans-serif;
-  width:80%;
   height:100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
-// .row {
-//   display: flex;
-//   flex-direction: row;
-// }
-// .column {
-//   display: flex;
-//   flex-direction: column;
-// }
 
-.justify-center { justify-content: center; }
-
-.border {
+.no-affil-border {
   border: 2px solid black;
 }
 
 .marvel {
   .icon {  color: red; }
 
-  &.border {
+  &.affil-border {
     border: 2px solid red;
   }
 
@@ -48,7 +37,7 @@ body {
 .dccomics {
   .icon { color: skyblue; }
 
-  &.border {
+  &.affil-border {
     border: 2px solid skyblue;
   }
 
@@ -60,7 +49,7 @@ body {
 }
 
 .no-affiliation {
-  &.border {
+  &.affil-border {
     border: 2px solid black;
   }
 }
