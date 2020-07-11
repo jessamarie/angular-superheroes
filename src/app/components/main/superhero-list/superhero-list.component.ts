@@ -22,8 +22,7 @@ export class SuperheroListComponent implements OnInit {
   * initialize superhero list
   */
  ngOnInit() {
-  this.superheroService.getSuperheroes()
- .subscribe(superheros => this.superheroes = superheros);
+  this.superheroService.getSuperheroes().subscribe(superheros => this.superheroes = superheros);
 }
 
 /**
@@ -32,7 +31,7 @@ export class SuperheroListComponent implements OnInit {
 *
 * @param Superhero superhero the superhero to get the affiliation for
 */
-getAffiliationClass(superhero): string {
+getAffiliationClass(superhero: Superhero): string {
  return this.superheroService.getAffiliationClass(superhero)
 }
 
@@ -41,7 +40,7 @@ getAffiliationClass(superhero): string {
 *
 * @param Superhero superhero the superhero selected by the user
 */
-selectSuperhero(superhero): void {
+selectSuperhero(superhero: Superhero): void {
  this.selectedHero = superhero
 }
 
@@ -49,7 +48,7 @@ unselectSuperhero(): void {
   this.selectedHero = null
 }
 
-onAffiliationChange(event): void {
+onAffiliationChange(event: string): void {
  this.affiliationClass = event
  console.log('event:', event)
 }

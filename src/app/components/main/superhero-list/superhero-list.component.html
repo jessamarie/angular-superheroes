@@ -1,21 +1,7 @@
 <ul class="superheroes row">
-
-    <!-- <li class="superhero no-affil-border" [ngClass]="affiliation">
-        <app-create-superhero (changeAffiliation)="onAffiliationChange($event)"></app-create-superhero>
-    </li> -->
-
     <li class="superhero affil-border d-flex flex-column justify-content-center align-items-center" [ngClass]="getAffiliationClass(superhero)" (click)="selectSuperhero(superhero)"
         *ngFor="let superhero of superheroes">
         <h2 class="superhero-name">{{superhero.name}}</h2>
         <p class="superhero-number">{{superhero.phoneNumber}}</p>
-        <!-- <fa-icon *ngIf="editMode" [icon]="faEdit" title="Edit Mode"></fa-icon> -->
     </li>
 </ul>
-
-<!-- <app-edit-superhero *ngIf="selectedHero && editMode" [superhero]="selectedHero"
-[affiliation]="getAffiliationClass(selectedHero)" (click)="unselectSuperhero()">
-</app-edit-superhero>
-
-<app-superhero-details *ngIf="selectedHero && !editMode" [superhero]="selectedHero"
-[affiliation]="getAffiliationClass(selectedHero)" (click)="unselectSuperhero()">
-</app-superhero-details> -->

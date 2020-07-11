@@ -1,6 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-// Http testing module and mocking controller
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { SuperheroListComponent } from './superhero-list.component';
 import { SuperheroService } from 'src/app/services/superhero.service';
@@ -8,18 +6,16 @@ import { SuperheroService } from 'src/app/services/superhero.service';
 describe('SuperheroListComponent', () => {
   let component: SuperheroListComponent;
   let fixture: ComponentFixture<SuperheroListComponent>;
-  // let httpMock: HttpTestingController;
-  // let superheroService: SuperheroService;
-
-  let superhero = {
-    id: 1,
-    name: 'name',
-    phoneNumber: '5183333333',
-    strengths: [],
-    weaknesses: [],
-    photoUrl: '',
-    affiliation: 'marvel'
-  }; 
+  
+  let superhero =   {
+    id: 3,
+    name: 'Iron Man',
+    phoneNumber: '555-555-6523',
+    strengths: ['flying', 'laser canons'],
+    weaknesses: ['emotions'],
+    photoUrl: 'http://i.imgur.com/SUkgtZpm.jpg',
+    affiliation: 'Marvel'
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -33,9 +29,6 @@ describe('SuperheroListComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SuperheroListComponent);
-    // httpMock = TestBed.inject(HttpTestingController);
-    // superheroService = TestBed.inject(SuperheroService);
-
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
