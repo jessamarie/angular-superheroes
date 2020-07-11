@@ -1,0 +1,16 @@
+.superheroes {
+    padding: 0;
+    margin: 0;
+
+    .superhero {
+      list-style-type: none;
+      margin-right: .1vw;
+      width: 200px;
+      height: 150px;
+      padding: .5em;
+
+      .superhero-number {
+        font-size: 1.2rem;
+      }
+    }
+  }

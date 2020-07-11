@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed');
+@import "./shared.scss";
+
+body, div, header, button, input, span, ul, li, h3, h4, p, button, img {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+  font-family: 'Saira Extra Condensed', sans-serif;
+}
+
+.no-affil-border {
+  border: 2px solid black;
+}
+
+.marvel {
+  .icon {  color: red; }
+
+  &.affil-border {
+    border: 2px solid red;
+  }
+
+  &:hover {
+    color: darkred;
+
+    .icon { color: darkred; }
+  }
+}
+
+.dccomics {
+  .icon { color: skyblue; }
+
+  &.affil-border {
+    border: 2px solid skyblue;
+  }
+
+  &:hover {
+    color: blue;
+
+    .icon { color: blue; }
+   }
+}
+
+.no-affiliation {
+  &.affil-border {
+    border: 2px solid black;
+  }
+}

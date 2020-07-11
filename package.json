@@ -1,46 +1,57 @@
 {
   "name": "angular-superheroes",
-  "version": "1.0.0",
-  "description": "What's the single worse feeling in the world? Answer: When disaster strikes, and you need to call a superhero, but you've forgot their phone number.",
-  "main": "app.js",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test --browsers=\"ChromeHeadless\"",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "compodoc": "./node_modules/.bin/compodoc -p ./tsconfig.json",
+    "postinstall": "ngcc"
+  },
+  "private": true,
   "dependencies": {
-    "angular": "^1.5.6",
-    "angular-bind-html-compile-ci-dev": "1.1.1",
-    "npm": "^5.7.1"
+    "@angular/animations": "^10.0.3",
+    "@angular/common": "^10.0.3",
+    "@angular/compiler": "^10.0.3",
+    "@angular/core": "^10.0.3",
+    "@angular/forms": "^10.0.3",
+    "@angular/platform-browser": "^10.0.3",
+    "@angular/platform-browser-dynamic": "^10.0.3",
+    "@angular/platform-server": "^10.0.3",
+    "@angular/router": "^10.0.3",
+    "@fortawesome/angular-fontawesome": "^0.7.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.29",
+    "@fortawesome/free-solid-svg-icons": "^5.13.1",
+    "angular-in-memory-web-api": "^0.11.0",
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "rxjs": "~6.5.5",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "angular-mocks": "^1.5.6",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.5.2",
-    "babel-preset-es2015": "^6.24.1",
-    "babelify": "^7.3.0",
-    "browserify": "^14.4.0",
-    "jasmine-core": "^2.8.0",
-    "karma": "^0.13.22",
-    "karma-babel-preprocessor": "^6.0.1",
-    "karma-browserify": "^5.1.1",
-    "karma-chrome-launcher": "^0.2.2",
-    "karma-coverage": "^1.0.0",
-    "karma-htmlfile-reporter": "^0.2.2",
-    "karma-jasmine": "^0.3.6",
-    "karma-phantomjs-launcher": "^0.2.3",
-    "phantomjs": "^2.1.1",
-    "phantomjs-prebuilt": "^2.1.15",
-    "stringify": "^5.1.0",
-    "watchify": "^3.9.0"
-  },
-  "scripts": {
-    "test": "karma start karma.conf.js --single-run",
-    "tdd": "karma start karma.conf.js --auto-watch --browsers PhantomJS --reporters progress"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jessamarie/angular-superheroes.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jessamarie/angular-superheroes/issues"
-  },
-  "homepage": "https://github.com/jessamarie/angular-superheroes#readme"
+    "@angular-devkit/build-angular": "~0.1000.1",
+    "@angular/cli": "~10.0.1",
+    "@angular/compiler-cli": "~10.0.3",
+    "@angular/language-service": "~10.0.3",
+    "@types/jasmine": "~3.3.8",
+    "@types/jasminewd2": "^2.0.8",
+    "@types/node": "^12.12.48",
+    "codelyzer": "^5.1.2",
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~5.0.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~3.0.2",
+    "karma-jasmine": "~3.3.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "protractor": "~7.0.0",
+    "ts-node": "~7.0.0",
+    "tslint": "~6.1.0",
+    "typescript": "~3.9.6"
+  }
 }

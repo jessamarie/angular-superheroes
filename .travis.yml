@@ -1,0 +1,14 @@
+
+dist: trusty
+addons:
+  chrome: stable
+language: node_js
+node_js:
+  - '14'
+cache:
+  directories:
+    - ./node_modules
+install:
+  - npm install
+script:
+  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
