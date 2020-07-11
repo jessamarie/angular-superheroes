@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed');
+@import "./shared.scss";
 
 body, div, header, button, input, span, ul, li, h3, h4, p, button, img {
   margin: 0;
@@ -10,10 +11,6 @@ body, div, header, button, input, span, ul, li, h3, h4, p, button, img {
 body {
   text-align: center;
   font-family: 'Saira Extra Condensed', sans-serif;
-  height:100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
 }
 
 .no-affil-border {
