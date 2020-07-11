@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
-import { Superhero } from 'src/app/superhero'
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-edit-superhero',
@@ -10,18 +9,10 @@ import { Superhero } from 'src/app/superhero'
 /** Class representing an editable superhero. */
 export class EditSuperheroComponent implements OnInit {
 
-  @Input() superhero: Superhero
-  @Input() affiliation: string
-
-  @Output() changeAffiliation: EventEmitter<string> = new EventEmitter()
-
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
-  change() {
-    this.changeAffiliation.emit(this.affiliation)
-  }
+  updateSuperhero() { }
 
 }

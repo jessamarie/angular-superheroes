@@ -16,15 +16,6 @@ describe('SuperheroDetailsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(SuperheroDetailsComponent);
     component = fixture.componentInstance;
-    component.superhero = {
-      id: 1,
-      name: 'name',
-      phoneNumber: '5183333333',
-      strengths: [],
-      weaknesses: [],
-      photoUrl: '',
-      affiliation: 'marvel'
-    };
     fixture.detectChanges();
   });
 

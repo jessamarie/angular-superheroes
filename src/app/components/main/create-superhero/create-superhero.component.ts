@@ -1,7 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
-
-import { faPlus, faTimesCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
-import { Superhero } from 'src/app/superhero'
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-create-superhero',
@@ -9,28 +6,11 @@ import { Superhero } from 'src/app/superhero'
   styleUrls: ['./create-superhero.component.scss']
 })
 export class CreateSuperheroComponent implements OnInit {
-  newSuperhero: Superhero
-  addHero: boolean
-  faCreateMode = faPlus
-  faExit = faTimesCircle
-  faCreate = faPlusCircle
 
-  @Output() changeAffiliation: EventEmitter<string> = new EventEmitter();
+  constructor() { }
 
-  constructor() {
-    this.newSuperhero = new Superhero();
-    this.addHero = false;
-  }
+  ngOnInit() { }
 
-  ngOnInit() {
-  }
-
-  change() {
-    this.changeAffiliation.emit(this.newSuperhero.affiliation)
-  }
-
-  createHero() {
-    
-  }
+  createHero() { }
 
 }

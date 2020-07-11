@@ -10,12 +10,8 @@ import { Superhero } from 'src/app/superhero'
 /** Class representing a superhero. */
 export class SuperheroDetailsComponent implements OnInit {
 
-  @Input() superhero: Superhero
-  @Input() affiliation: string
-
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
