@@ -1,0 +1,27 @@
+.superhero-container {
+    position: absolute;
+    top: -50px;
+
+    height: 500px;
+    width: 300px;
+    z-index: 1;
+    // border: 1px black solid;
+    // background-color: white;
+
+    .card {
+        height: 100%;
+        width:100%;
+
+        .card-body {
+            overflow: auto;
+        }
+    }
+
+    &.position-left {
+        right: 150px;
+    }
+
+    &.position-right {
+        left: 150px;
+    }
+}
