@@ -1,0 +1,70 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.create-superhero-container {
+  width: 100%;
+  height: 100%;
+
+  // Collapsed state: a dashed card-shaped tile that sits flush in the grid.
+  .add-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    width: 100%;
+    height: 100%;
+    min-height: 130px;
+    padding: 0.5em;
+    border: 2px dashed rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+    background: transparent;
+    color: inherit;
+    font-weight: 600;
+    cursor: pointer;
+
+    .add-plus {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    &:hover {
+      border-color: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.03);
+    }
+  }
+
+  .create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    text-align: left;
+
+    .create-field {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.85rem;
+
+      span {
+        font-weight: 600;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 0.25rem 0.4rem;
+      }
+    }
+
+    .create-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+    }
+  }
+}

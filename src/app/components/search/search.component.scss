@@ -1,0 +1,21 @@
+.search {
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+
+  .search-input {
+    width: 100%;
+    max-width: 420px;
+    padding: 0.5rem 0.9rem;
+    font-size: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 999px;
+
+    &:focus {
+      outline: none;
+      border-color: #333;
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

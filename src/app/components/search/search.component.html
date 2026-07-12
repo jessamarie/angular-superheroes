@@ -1,0 +1,9 @@
+<div class="search">
+  <input
+    type="search"
+    class="search-input"
+    placeholder="Search heroes by name…"
+    aria-label="Search heroes by name"
+    [value]="searchTerm()"
+    (input)="onSearch($any($event.target).value)" />
+</div>

@@ -1,5 +1,54 @@
 <app-superhero-container>
- <p>
-     app details go here
- </p>
+  <div class="details">
+    @if (superhero().photoUrl && !imageFailed()) {
+      <img
+        class="details-photo"
+        [src]="superhero().photoUrl"
+        [alt]="superhero().name"
+        (load)="onImageLoad($event)"
+        (error)="imageFailed.set(true)" />
+    }
+
+    <h3 class="details-name">{{ superhero().name }}</h3>
+    <p class="details-affiliation">{{ superhero().affiliation }}</p>
+
+    @if (!editing()) {
+      <p class="details-number">{{ superhero().phoneNumber }}</p>
+
+      @if (superhero().strengths.length) {
+        <div class="details-section">
+          <h4>Strengths</h4>
+          <ul>
+            @for (strength of superhero().strengths; track $index) {
+              <li>{{ strength }}</li>
+            }
+          </ul>
+        </div>
+      }
+
+      @if (superhero().weaknesses.length) {
+        <div class="details-section">
+          <h4>Weaknesses</h4>
+          <ul>
+            @for (weakness of superhero().weaknesses; track $index) {
+              <li>{{ weakness }}</li>
+            }
+          </ul>
+        </div>
+      }
+
+      <button type="button" class="btn btn-outline-dark btn-sm edit-btn" (click)="startEdit()">
+        <fa-icon [icon]="faEdit"></fa-icon>
+        Edit
+      </button>
+    }
+
+    @if (editing()) {
+      <app-edit-superhero
+        [superhero]="superhero()"
+        (saved)="onSaved($event)"
+        (cancelled)="cancelEdit()">
+      </app-edit-superhero>
+    }
+  </div>
 </app-superhero-container>

@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core';
+import { SuperheroListComponent } from './superhero-list/superhero-list.component';
 
 @Component({
   selector: 'app-main',
+  imports: [SuperheroListComponent],
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrl: './main.component.scss'
 })
-
-export class MainComponent implements OnInit {
-
-  constructor() {
-  }
-
-  ngOnInit() { }
-}
+export class MainComponent {}

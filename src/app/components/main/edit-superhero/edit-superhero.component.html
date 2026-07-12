@@ -1,1 +1,16 @@
-<div class="edit-superhero-container">Create Superhero works!</div>
+<form class="edit-superhero-container" (ngSubmit)="updateSuperhero()">
+  <label class="edit-field">
+    <span>Name</span>
+    <input name="name" type="text" [(ngModel)]="name" required />
+  </label>
+
+  <label class="edit-field">
+    <span>Phone number</span>
+    <input name="phoneNumber" type="tel" [(ngModel)]="phoneNumber" required />
+  </label>
+
+  <div class="edit-actions">
+    <button type="submit" class="btn btn-primary btn-sm">Save</button>
+    <button type="button" class="btn btn-secondary btn-sm" (click)="cancel()">Cancel</button>
+  </div>
+</form>

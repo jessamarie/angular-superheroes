@@ -1,18 +1,32 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, input, OnInit, output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Superhero } from '../../../superhero';
 
+/** Inline form for editing an editable superhero's name and phone number. */
 @Component({
   selector: 'app-edit-superhero',
+  imports: [FormsModule],
   templateUrl: './edit-superhero.component.html',
-  styleUrls: ['./edit-superhero.component.scss']
+  styleUrl: './edit-superhero.component.scss'
 })
-
-/** Class representing an editable superhero. */
 export class EditSuperheroComponent implements OnInit {
+  readonly superhero = input.required<Superhero>();
+  readonly saved = output<Pick<Superhero, 'name' | 'phoneNumber'>>();
+  readonly cancelled = output<void>();
 
-  constructor() { }
+  name = '';
+  phoneNumber = '';
 
-  ngOnInit() { }
+  ngOnInit(): void {
+    this.name = this.superhero().name;
+    this.phoneNumber = this.superhero().phoneNumber;
+  }
 
-  updateSuperhero() { }
+  updateSuperhero(): void {
+    this.saved.emit({ name: this.name, phoneNumber: this.phoneNumber });
+  }
 
+  cancel(): void {
+    this.cancelled.emit();
+  }
 }

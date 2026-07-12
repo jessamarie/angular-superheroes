@@ -1,9 +1,9 @@
-export class Superhero {
-  id: number
-  name: string
-  phoneNumber: string
-  strengths: Array<string>
-  weaknesses: Array<string>
-  photoUrl: string
-  affiliation: string
+export interface Superhero {
+  id: number;
+  name: string;
+  phoneNumber: string;
+  strengths: string[];
+  weaknesses: string[];
+  photoUrl: string;
+  affiliation: string;
 }

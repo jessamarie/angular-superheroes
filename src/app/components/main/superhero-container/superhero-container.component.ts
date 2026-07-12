@@ -1,47 +1,22 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { afterNextRender, Component, ElementRef, inject, signal, viewChild } from '@angular/core';
 import { PositionService } from './position.service';
-import { Subject, BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-superhero-container',
   templateUrl: './superhero-container.component.html',
-  styleUrls: ['./superhero-container.component.scss']
+  styleUrl: './superhero-container.component.scss'
 })
-export class SuperheroContainerComponent implements OnInit {
-  @ViewChild('card') card: ElementRef;
-  positionClass: string;
-  positionSubject: Subject<string> = new BehaviorSubject('loading');
+export class SuperheroContainerComponent {
+  private readonly positionService = inject(PositionService);
 
-  constructor(private positionService: PositionService) { }
+  readonly card = viewChild.required<ElementRef>('card');
+  readonly positionClass = signal('loading');
 
-  ngOnInit(): void {
-    // this.positionClass = 'position-right';
-    // this.positionClass = this.getPositionClass();
-    this.positionSubject.subscribe(async data => {
-      this.positionClass = await data;
+  constructor() {
+    // Measure where the card sits on screen after it renders, then open the
+    // popover toward the centre of the page (left or right accordingly).
+    afterNextRender(() => {
+      this.positionClass.set(this.positionService.getPosition(this.card()));
     });
   }
-
-  ngAfterViewInit(): void {
-    this.positionSubject.next(this.getPositionClass());
-  }
-
-
-  getPositionClass() {
-    let isRight = this.positionService.isCardStartBeforeHalfPageWidth(this.card);
-
-    console.log(this.positionService.nativeWindow);
-    console.log(this.card);
-    console.log(this.card.nativeElement.getBoundingClientRect());
-
-    if (isRight) {
-      console.log("right");
-      return 'position-right';
-    } else {
-      console.log("left");
-      return 'position-left';
-    }
-  }
-
-
 }

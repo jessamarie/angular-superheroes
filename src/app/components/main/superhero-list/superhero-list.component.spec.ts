@@ -1,13 +1,14 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { SuperheroListComponent } from './superhero-list.component';
-import { SuperheroService } from 'src/app/services/superhero.service';
+import { Superhero } from '../../../superhero';
 
 describe('SuperheroListComponent', () => {
   let component: SuperheroListComponent;
   let fixture: ComponentFixture<SuperheroListComponent>;
-  
-  let superhero =   {
+
+  const superhero: Superhero = {
     id: 3,
     name: 'Iron Man',
     phoneNumber: '555-555-6523',
@@ -17,17 +18,12 @@ describe('SuperheroListComponent', () => {
     affiliation: 'Marvel'
   };
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule ],
-      declarations: [ SuperheroListComponent ],
-      providers: [ SuperheroService ]
-    })
-    .compileComponents();
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [SuperheroListComponent],
+      providers: [provideHttpClient(), provideHttpClientTesting()]
+    }).compileComponents();
 
-  }));
-
-  beforeEach(() => {
     fixture = TestBed.createComponent(SuperheroListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -57,9 +53,24 @@ describe('SuperheroListComponent', () => {
   });
 
   it('should change affiliation class', () => {
-    component.onAffiliationChange("dccomics");
-    expect(component.affiliationClass).toEqual("dccomics");
+    component.onAffiliationChange('dccomics');
+    expect(component.affiliationClass).toEqual('dccomics');
   });
 
+  it('should filter heroes by name (case-insensitive)', () => {
+    component.superheroes.set([
+      { ...superhero, id: 1, name: 'Batman' },
+      { ...superhero, id: 2, name: 'Superman' },
+      { ...superhero, id: 3, name: 'Iron Man' }
+    ]);
 
+    component.searchTerm.set('BAT');
+    expect(component.filteredSuperheroes().map(hero => hero.name)).toEqual(['Batman']);
+
+    component.searchTerm.set('man');
+    expect(component.filteredSuperheroes().map(hero => hero.name)).toEqual(['Batman', 'Superman', 'Iron Man']);
+
+    component.searchTerm.set('');
+    expect(component.filteredSuperheroes().length).toBe(3);
+  });
 });

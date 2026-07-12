@@ -1,17 +1,54 @@
 .superheroes {
-    padding: 0;
-    margin: 0;
+  display: grid;
+  // Fluid columns: as many ~150px cards as fit, each stretching to fill.
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.1rem;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  // Top-align cells so an expanded "add" form doesn't stretch its row-mates.
+  align-items: start;
 
-    .superhero {
-      position: relative;
-      list-style-type: none;
-      margin-right: .1vw;
-      width: 200px;
-      height: 150px;
-      padding: .5em;
+  // The "Add Superhero" tile: a grid cell flush with the hero cards.
+  .add-superhero-cell {
+    list-style-type: none;
+    display: flex;
+    min-height: 130px;
+  }
 
-      .superhero-number {
-        font-size: 1.2rem;
-      }
+  .superhero {
+    position: relative;
+    list-style-type: none;
+    min-height: 130px;
+    padding: 0.5em;
+    cursor: pointer;
+
+    // Lift the hovered hero (and its popover) above its neighbours.
+    &:hover {
+      z-index: 20;
+    }
+
+    .superhero-name {
+      font-size: clamp(1rem, 3.5vw, 1.35rem);
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .superhero-number {
+      font-size: clamp(0.9rem, 3vw, 1.2rem);
     }
   }
+}
+
+.no-results {
+  margin: 0 0 0.75rem;
+  font-style: italic;
+  opacity: 0.75;
+}
+
+@media (max-width: 400px) {
+  .superheroes {
+    // Guarantee two columns even on the narrowest phones.
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

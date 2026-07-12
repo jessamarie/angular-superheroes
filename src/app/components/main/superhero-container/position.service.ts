@@ -1,24 +1,27 @@
 import { Injectable, ElementRef } from '@angular/core';
-import { faTintSlash } from '@fortawesome/free-solid-svg-icons';
 
-function _window() : Window {
-   // return the global native browser window object
-   return window;
+function _window(): Window {
+  // return the global native browser window object
+  return window;
 }
 
 @Injectable({
-    providedIn: 'root'
-  })
+  providedIn: 'root'
+})
 export class PositionService {
+  getPosition(cardElement: ElementRef): Position {
+    const startPosition = cardElement.nativeElement.getBoundingClientRect().x;
+    const windowWidth = this.nativeWindow.innerWidth;
 
-   isCardStartBeforeHalfPageWidth(cardElement: ElementRef) {
-      let startPosition = cardElement.nativeElement.getBoundingClientRect().x;
-      let windowWidth = this.nativeWindow.innerWidth;
-   
-      return startPosition < windowWidth/2
-   }
+    return startPosition < windowWidth / 2 ? Position.Right : Position.Left;
+  }
 
-   get nativeWindow() : Window {
-      return _window();
-   }
+  get nativeWindow(): Window {
+    return _window();
+  }
+}
+
+enum Position {
+  Left = 'position-left',
+  Right = 'position-right'
 }

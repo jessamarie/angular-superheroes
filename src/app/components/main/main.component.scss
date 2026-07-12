@@ -1,8 +1,28 @@
 .phonebook-wrapper {
   display: flex;
+  align-items: stretch;
+  padding: 0 0.5rem;
 
   .phonebook-binding {
+    flex: 0 0 auto;
     background-color: black;
     width: 5em;
+  }
+
+  app-superhero-list {
+    display: block;
+    flex: 1 1 auto;
+    // Allow the grid inside to shrink rather than overflow its flex parent.
+    min-width: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .phonebook-wrapper {
+    padding: 0 0.25rem;
+
+    .phonebook-binding {
+      width: 1.5em;
+    }
   }
 }
