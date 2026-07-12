@@ -6,7 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "deploy": "ng deploy --base-href=/angular-superheroes/",
+    "wat4h": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
