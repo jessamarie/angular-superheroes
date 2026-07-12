@@ -78,6 +78,9 @@
             "tsConfig": "tsconfig.spec.json",
             "buildTarget": "angular-superheroes:build"
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
