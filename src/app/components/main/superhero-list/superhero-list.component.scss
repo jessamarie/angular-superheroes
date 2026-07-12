@@ -23,8 +23,8 @@
     padding: 0.5em;
     cursor: pointer;
 
-    // Lift the hovered hero (and its popover) above its neighbours.
-    &:hover {
+    // Lift the selected hero (and its popover) above its neighbours.
+    &.is-selected {
       z-index: 20;
     }
 

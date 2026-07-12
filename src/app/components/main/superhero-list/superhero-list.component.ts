@@ -23,8 +23,12 @@ export class SuperheroListComponent implements OnInit {
     return query ? all.filter(hero => hero.name.toLowerCase().includes(query)) : all;
   });
 
-  selectedHero: Superhero | null = null;
+  readonly selectedHero = signal<Superhero | null>(null);
   affiliationClass = '';
+
+  // While a hero's details are being edited, keep its popover pinned open so the
+  // reflow from switching to the edit form can't trigger a mouseleave that closes it.
+  private editingOpen = false;
 
   ngOnInit(): void {
     this.superheroService.getSuperheroes().subscribe(superheroes => this.superheroes.set(superheroes));
@@ -51,16 +55,25 @@ export class SuperheroListComponent implements OnInit {
   }
 
   /**
-   * Select the superhero that the user hovers over
+   * Toggle a hero's popover on click: open it, or close it if it's already the
+   * selected hero. Only one hero is ever selected at a time.
    *
-   * @param superhero the superhero selected by the user
+   * @param superhero the superhero the user clicked
    */
-  selectSuperhero(superhero: Superhero): void {
-    this.selectedHero = superhero;
+  toggleSuperhero(superhero: Superhero): void {
+    if (this.selectedHero() === superhero) {
+      // Don't close the popover out from under an in-progress edit.
+      if (this.editingOpen) {
+        return;
+      }
+      this.selectedHero.set(null);
+    } else {
+      this.selectedHero.set(superhero);
+    }
   }
 
-  unselectSuperhero(): void {
-    this.selectedHero = null;
+  onDetailsEditingChange(editing: boolean): void {
+    this.editingOpen = editing;
   }
 
   onAffiliationChange(event: string): void {

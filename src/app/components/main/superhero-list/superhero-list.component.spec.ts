@@ -41,15 +41,37 @@ describe('SuperheroListComponent', () => {
     expect(component.getAffiliationClass(superhero)).toEqual('marvel');
   });
 
-  it('should set superhero', () => {
-    component.selectSuperhero(superhero);
-    expect(component.selectedHero).toEqual(superhero);
+  const otherHero: Superhero = { ...superhero, id: 1, name: 'Batman', affiliation: 'DC Comics' };
+
+  it('should open a hero on click', () => {
+    component.toggleSuperhero(superhero);
+    expect(component.selectedHero()).toEqual(superhero);
   });
 
-  it('should unset superhero', () => {
-    component.selectSuperhero(superhero);
-    component.unselectSuperhero();
-    expect(component.selectedHero).toEqual(null);
+  it('should close a hero on a second click', () => {
+    component.toggleSuperhero(superhero);
+    component.toggleSuperhero(superhero);
+    expect(component.selectedHero()).toEqual(null);
+  });
+
+  it('should keep only one hero selected at a time', () => {
+    component.toggleSuperhero(superhero);
+    component.toggleSuperhero(otherHero);
+    expect(component.selectedHero()).toEqual(otherHero);
+  });
+
+  it('should not close mid-edit, but close once editing ends', () => {
+    component.toggleSuperhero(superhero);
+    component.onDetailsEditingChange(true);
+
+    // A second click while editing must NOT close the popover.
+    component.toggleSuperhero(superhero);
+    expect(component.selectedHero()).toEqual(superhero);
+
+    // Once editing ends, clicking again closes it.
+    component.onDetailsEditingChange(false);
+    component.toggleSuperhero(superhero);
+    expect(component.selectedHero()).toEqual(null);
   });
 
   it('should change affiliation class', () => {

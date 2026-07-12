@@ -6,13 +6,17 @@
   @for (superhero of filteredSuperheroes(); track superhero.id) {
     <li class="superhero affil-border d-flex flex-column justify-content-center align-items-center"
       [class]="getAffiliationClass(superhero)"
-      (mouseenter)="selectSuperhero(superhero)"
-      (mouseleave)="unselectSuperhero()">
+      [class.is-selected]="superhero === selectedHero()"
+      (click)="toggleSuperhero(superhero)">
       <h2 class="superhero-name">{{ superhero.name }}</h2>
       <p class="superhero-number">{{ superhero.phoneNumber }}</p>
 
-      @if (superhero === selectedHero) {
-        <app-superhero-details [superhero]="superhero"></app-superhero-details>
+      @if (superhero === selectedHero()) {
+        <app-superhero-details
+          [superhero]="superhero"
+          (click)="$event.stopPropagation()"
+          (editingChange)="onDetailsEditingChange($event)">
+        </app-superhero-details>
       }
     </li>
   }

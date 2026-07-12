@@ -18,6 +18,8 @@ export class SuperheroDetailsComponent {
 
   readonly superhero = input.required<Superhero>();
   readonly updated = output<Superhero>();
+  // Lets the list keep the popover open while an edit is in progress.
+  readonly editingChange = output<boolean>();
 
   // A signal so the view reliably refreshes when the async save completes,
   // even though the in-memory API delivers its response outside Angular's zone.
@@ -38,11 +40,11 @@ export class SuperheroDetailsComponent {
   }
 
   startEdit(): void {
-    this.editing.set(true);
+    this.setEditing(true);
   }
 
   cancelEdit(): void {
-    this.editing.set(false);
+    this.setEditing(false);
   }
 
   onSaved(changes: Pick<Superhero, 'name' | 'phoneNumber'>): void {
@@ -50,8 +52,13 @@ export class SuperheroDetailsComponent {
     this.superheroService.updateSuperhero({ ...hero, ...changes }).subscribe(() => {
       // Reflect the change in place so the list behind the popover updates too.
       Object.assign(hero, changes);
-      this.editing.set(false);
+      this.setEditing(false);
       this.updated.emit(hero);
     });
+  }
+
+  private setEditing(editing: boolean): void {
+    this.editing.set(editing);
+    this.editingChange.emit(editing);
   }
 }
