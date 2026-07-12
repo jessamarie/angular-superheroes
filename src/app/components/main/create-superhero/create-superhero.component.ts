@@ -1,46 +1,38 @@
 import { Component, output, signal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { SuperheroContainerComponent } from '../superhero-container/superhero-container.component';
+import { EditSuperheroComponent, SuperheroFormValue } from '../edit-superhero/edit-superhero.component';
 import { Superhero } from '../../../superhero';
 
-/** Collapsible form for adding a new superhero to the phone book. */
+/**
+ * "Add Superhero" tile. Selecting it opens a popover containing the shared hero
+ * form (the same one used for editing) to create a new superhero.
+ */
 @Component({
   selector: 'app-create-superhero',
-  imports: [FormsModule],
+  imports: [SuperheroContainerComponent, EditSuperheroComponent],
   templateUrl: './create-superhero.component.html',
-  styleUrl: './create-superhero.component.scss'
+  styleUrl: './create-superhero.component.scss',
+  host: { '[class.is-open]': 'open()' }
 })
 export class CreateSuperheroComponent {
   readonly created = output<Omit<Superhero, 'id'>>();
-
   readonly open = signal(false);
-  name = '';
-  phoneNumber = '';
-  affiliation = 'Marvel';
 
   toggle(): void {
     this.open.update(open => !open);
   }
 
-  createHero(): void {
+  onSaved(values: SuperheroFormValue): void {
     this.created.emit({
-      name: this.name.trim(),
-      phoneNumber: this.phoneNumber.trim(),
-      affiliation: this.affiliation,
+      ...values,
       strengths: [],
       weaknesses: [],
       photoUrl: ''
     });
-    this.reset();
+    this.open.set(false);
   }
 
   cancel(): void {
-    this.reset();
-  }
-
-  private reset(): void {
-    this.name = '';
-    this.phoneNumber = '';
-    this.affiliation = 'Marvel';
     this.open.set(false);
   }
 }

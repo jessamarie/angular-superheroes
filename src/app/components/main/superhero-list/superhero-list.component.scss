@@ -1,7 +1,9 @@
 .superheroes {
   display: grid;
-  // Fluid columns: as many ~150px cards as fit, each stretching to fill.
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  // Fluid columns, but at most 5 per row: each column is at least a fifth of the
+  // row (minus the 4 gaps) once there's room, and never narrower than 150px so it
+  // still collapses to fewer columns on small screens.
+  grid-template-columns: repeat(auto-fill, minmax(max(150px, calc((100% - 0.4rem) / 5)), 1fr));
   gap: 0.1rem;
   padding: 0;
   margin: 0;

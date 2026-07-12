@@ -1,13 +1,19 @@
 :host {
   display: block;
   width: 100%;
+  // Anchor the popover to this tile, and lift it above sibling cards when open.
+  position: relative;
+}
+
+:host(.is-open) {
+  z-index: 20;
 }
 
 .create-superhero-container {
   width: 100%;
   height: 100%;
 
-  // Collapsed state: a dashed card-shaped tile that sits flush in the grid.
+  // A dashed card-shaped tile that sits flush in the grid.
   .add-toggle {
     display: flex;
     flex-direction: column;
@@ -33,38 +39,6 @@
     &:hover {
       border-color: rgba(0, 0, 0, 0.6);
       background: rgba(0, 0, 0, 0.03);
-    }
-  }
-
-  .create-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.75rem;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
-    text-align: left;
-
-    .create-field {
-      display: flex;
-      flex-direction: column;
-      font-size: 0.85rem;
-
-      span {
-        font-weight: 600;
-      }
-
-      input,
-      select {
-        width: 100%;
-        padding: 0.25rem 0.4rem;
-      }
-    }
-
-    .create-actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 0.5rem;
     }
   }
 }

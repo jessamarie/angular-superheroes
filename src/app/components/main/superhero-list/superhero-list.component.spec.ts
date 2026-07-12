@@ -74,6 +74,36 @@ describe('SuperheroListComponent', () => {
     expect(component.selectedHero()).toEqual(null);
   });
 
+  it('should deselect when clicking outside the list', () => {
+    component.toggleSuperhero(superhero);
+    const outside = document.createElement('div');
+    document.body.appendChild(outside);
+
+    component.onDocumentClick({ target: outside } as unknown as MouseEvent);
+    expect(component.selectedHero()).toBeNull();
+
+    outside.remove();
+  });
+
+  it('should keep the selection when clicking inside the list', () => {
+    component.toggleSuperhero(superhero);
+    // The host element counts as inside.
+    component.onDocumentClick({ target: fixture.nativeElement } as unknown as MouseEvent);
+    expect(component.selectedHero()).toEqual(superhero);
+  });
+
+  it('should not deselect on an outside click while editing', () => {
+    component.toggleSuperhero(superhero);
+    component.onDetailsEditingChange(true);
+    const outside = document.createElement('div');
+    document.body.appendChild(outside);
+
+    component.onDocumentClick({ target: outside } as unknown as MouseEvent);
+    expect(component.selectedHero()).toEqual(superhero);
+
+    outside.remove();
+  });
+
   it('should change affiliation class', () => {
     component.onAffiliationChange('dccomics');
     expect(component.affiliationClass).toEqual('dccomics');

@@ -1,4 +1,4 @@
-import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, ElementRef, inject, OnInit, signal } from '@angular/core';
 import { SuperheroService } from '../../../services/superhero.service';
 import { Superhero } from '../../../superhero';
 import { SuperheroDetailsComponent } from '../superhero-details/superhero-details.component';
@@ -8,10 +8,12 @@ import { CreateSuperheroComponent } from '../create-superhero/create-superhero.c
   selector: 'app-superhero-list',
   imports: [SuperheroDetailsComponent, CreateSuperheroComponent],
   templateUrl: './superhero-list.component.html',
-  styleUrl: './superhero-list.component.scss'
+  styleUrl: './superhero-list.component.scss',
+  host: { '(document:click)': 'onDocumentClick($event)' }
 })
 export class SuperheroListComponent implements OnInit {
   private readonly superheroService = inject(SuperheroService);
+  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
 
   readonly superheroes = signal<Superhero[]>([]);
   readonly searchTerm = this.superheroService.searchTerm;
@@ -74,6 +76,16 @@ export class SuperheroListComponent implements OnInit {
 
   onDetailsEditingChange(editing: boolean): void {
     this.editingOpen = editing;
+  }
+
+  /** Deselect the open hero when the user clicks outside the phone book. */
+  onDocumentClick(event: MouseEvent): void {
+    if (this.editingOpen || !this.selectedHero()) {
+      return;
+    }
+    if (!this.host.nativeElement.contains(event.target as Node)) {
+      this.selectedHero.set(null);
+    }
   }
 
   onAffiliationChange(event: string): void {

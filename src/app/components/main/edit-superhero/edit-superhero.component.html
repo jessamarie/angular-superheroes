@@ -1,4 +1,4 @@
-<form class="edit-superhero-container" (ngSubmit)="updateSuperhero()">
+<form class="edit-superhero-container" (ngSubmit)="save()">
   <label class="edit-field">
     <span>Name</span>
     <input name="name" type="text" [(ngModel)]="name" required />
@@ -7,6 +7,14 @@
   <label class="edit-field">
     <span>Phone number</span>
     <input name="phoneNumber" type="tel" [(ngModel)]="phoneNumber" required />
+  </label>
+
+  <label class="edit-field">
+    <span>Affiliation</span>
+    <select name="affiliation" [(ngModel)]="affiliation">
+      <option value="Marvel">Marvel</option>
+      <option value="DC Comics">DC Comics</option>
+    </select>
   </label>
 
   <div class="edit-actions">

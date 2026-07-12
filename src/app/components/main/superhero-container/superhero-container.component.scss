@@ -1,7 +1,7 @@
 .superhero-container {
     display: flex;
     position: absolute;
-    top: 0;
+    top: 0; // default: open downward from the card's top
     z-index: 10;
 
     width: 260px;
@@ -48,28 +48,33 @@
             border-left-color: #fff;
         }
     }
-}
 
-// On narrow screens a side-anchored card would fall off-screen, so present the
-// popover as a centred overlay instead and drop the pointer arrow.
-@media (max-width: 576px) {
-    .superhero-container {
+    // Card is near the bottom of the screen -> anchor to its bottom and grow
+    // upward so the popover isn't cut off, with the arrow near the bottom.
+    &.open-up {
+        top: auto;
+        bottom: 0;
+
+        .arrow {
+            top: auto;
+            bottom: 24px;
+        }
+    }
+
+    // Fits neither below nor above (tall popover / short viewport), or the screen
+    // is too narrow -> present it as a centred, self-scrolling overlay.
+    &.open-center {
         position: fixed;
         top: 50%;
         left: 50%;
         right: auto;
+        bottom: auto;
         transform: translate(-50%, -50%);
         width: min(92vw, 340px);
-        max-height: 80vh;
-
-        &.position-left,
-        &.position-right {
-            left: 50%;
-            right: auto;
-        }
+        max-height: 85vh;
 
         .card .card-body {
-            max-height: 80vh;
+            max-height: 85vh;
         }
 
         .arrow {
@@ -77,4 +82,3 @@
         }
     }
 }
-

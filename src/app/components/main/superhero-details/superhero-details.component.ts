@@ -2,7 +2,7 @@ import { Component, inject, input, output, signal } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { SuperheroContainerComponent } from '../superhero-container/superhero-container.component';
-import { EditSuperheroComponent } from '../edit-superhero/edit-superhero.component';
+import { EditSuperheroComponent, SuperheroFormValue } from '../edit-superhero/edit-superhero.component';
 import { SuperheroService } from '../../../services/superhero.service';
 import { Superhero } from '../../../superhero';
 
@@ -47,7 +47,7 @@ export class SuperheroDetailsComponent {
     this.setEditing(false);
   }
 
-  onSaved(changes: Pick<Superhero, 'name' | 'phoneNumber'>): void {
+  onSaved(changes: SuperheroFormValue): void {
     const hero = this.superhero();
     this.superheroService.updateSuperhero({ ...hero, ...changes }).subscribe(() => {
       // Reflect the change in place so the list behind the popover updates too.

@@ -21,21 +21,19 @@ describe('CreateSuperheroComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should start collapsed and toggle open', () => {
+  it('should start closed and toggle the popover open', () => {
     expect(component.open()).toBe(false);
     component.toggle();
     expect(component.open()).toBe(true);
   });
 
-  it('should emit the created hero and reset the form', () => {
+  it('should emit the created hero from the form values and close', () => {
+    component.toggle();
+
     let created: Omit<Superhero, 'id'> | undefined;
     component.created.subscribe(hero => (created = hero));
 
-    component.toggle();
-    component.name = 'Deadpool';
-    component.phoneNumber = '555-909-0909';
-    component.affiliation = 'Marvel';
-    component.createHero();
+    component.onSaved({ name: 'Deadpool', phoneNumber: '555-909-0909', affiliation: 'Marvel' });
 
     expect(created).toEqual({
       name: 'Deadpool',
@@ -45,8 +43,6 @@ describe('CreateSuperheroComponent', () => {
       weaknesses: [],
       photoUrl: ''
     });
-    // form resets and collapses after emitting
-    expect(component.name).toBe('');
     expect(component.open()).toBe(false);
   });
 });

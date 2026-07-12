@@ -1,33 +1,12 @@
 <div class="create-superhero-container">
-  @if (!open()) {
-    <button type="button" class="add-toggle" (click)="toggle()">
-      <span class="add-plus" aria-hidden="true">+</span>
-      <span>Add Superhero</span>
-    </button>
-  } @else {
-    <form class="create-form" (ngSubmit)="createHero()">
-      <label class="create-field">
-        <span>Name</span>
-        <input name="name" type="text" [(ngModel)]="name" required />
-      </label>
+  <button type="button" class="add-toggle" (click)="toggle()">
+    <span class="add-plus" aria-hidden="true">+</span>
+    <span>Add Superhero</span>
+  </button>
 
-      <label class="create-field">
-        <span>Phone number</span>
-        <input name="phoneNumber" type="tel" [(ngModel)]="phoneNumber" required />
-      </label>
-
-      <label class="create-field">
-        <span>Affiliation</span>
-        <select name="affiliation" [(ngModel)]="affiliation">
-          <option value="Marvel">Marvel</option>
-          <option value="DC Comics">DC Comics</option>
-        </select>
-      </label>
-
-      <div class="create-actions">
-        <button type="submit" class="btn btn-primary btn-sm">Add</button>
-        <button type="button" class="btn btn-secondary btn-sm" (click)="cancel()">Cancel</button>
-      </div>
-    </form>
+  @if (open()) {
+    <app-superhero-container>
+      <app-edit-superhero (saved)="onSaved($event)" (cancelled)="cancel()"></app-edit-superhero>
+    </app-superhero-container>
   }
 </div>

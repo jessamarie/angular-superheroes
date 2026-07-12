@@ -2,6 +2,9 @@
   display: flex;
   align-items: stretch;
   padding: 0 0.5rem;
+  // Keep the phone book a little narrower than the full Bootstrap container.
+  max-width: 1000px;
+  margin-inline: auto;
 
   .phonebook-binding {
     flex: 0 0 auto;
